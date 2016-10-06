@@ -1,0 +1,43 @@
+<div class="main">
+    <div ng-include="'components/shell/shell.html'"></div>
+    <md-content class="md-padding">
+        <md-card class="contact-card">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Contactez-nous</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <form name="form" ng-submit="contact(form)" novalidate>
+                    <md-input-container class="md-block">
+                        <label>Nom</label>
+                        <md-icon class="material-icons">person</md-icon>
+                        <input required type="text" name="name" ng-model="message.name">
+                        <div ng-messages="form.email.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Email</label>
+                        <md-icon md-svg-src="communication:email" class="name"></md-icon>
+                        <input required type="email" name="email" ng-model="message.email">
+                        <div ng-messages="form.email.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Votre message</label>
+                        <md-icon md-svg-src="communication:message" class="name"></md-icon>
+                        <textarea ng-model="message.content" md-maxlength="2000" rows="5" md-select-on-focus></textarea>
+                    </md-input-container>
+                    <div layout="row" layout-align="end center">
+                        <md-button class="md-primary" type="submit">
+                            Envoyer
+                        </md-button>
+                    </div>
+                </form>
+            </md-card-content>
+        </md-card>
+    </md-content>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>

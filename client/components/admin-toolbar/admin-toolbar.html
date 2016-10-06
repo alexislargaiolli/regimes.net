@@ -1,0 +1,40 @@
+<md-toolbar ng-if="isLoggedIn()">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Settings" ng-if="isLoggedIn()">
+            <md-icon md-svg-icon="assets/icons/menu.svg"></md-icon>
+        </md-button>
+        <span flex=""></span>
+        <md-menu>
+            <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
+                <md-icon md-menu-origin md-svg-icon="assets/icons/dots-vertical.svg"></md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item ng-show="isLoggedIn()">
+                    <md-button ui-sref="settings">
+                        <md-icon md-svg-icon="action:account_circle"></md-icon>
+                        Mon profil
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider ng-if="isLoggedIn()"></md-menu-divider>
+                <md-menu-item ng-hide="isLoggedIn()" ui-sref="login">
+                    <md-button>
+                        <md-icon md-svg-icon="action:input"></md-icon>
+                        Login
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-hide="isLoggedIn()" ui-sref="signup">
+                    <md-button>
+                        <md-icon md-svg-icon="action:launch"></md-icon>
+                        Signup
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-show="isLoggedIn()">
+                    <md-button ng-click="logout()">
+                        <md-icon md-svg-icon="action:exit_to_app"></md-icon>
+                        Logout
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>

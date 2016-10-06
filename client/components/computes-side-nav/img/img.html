@@ -1,0 +1,29 @@
+<div ng-controller="IMGCtrl as imgCtrl" class="compute-block" layout-padding>
+    <div class="center" ng-if="imgCtrl.active == false" layout="column">
+        <md-button flex class="md-primary md-raised" ng-click="imgCtrl.setActive()">Calculer mon IMG</md-button>
+        <p class="description">L'indice de masse corporelle (IMC) est une grandeur qui permet d'estimer la corpulence d'une personne.</p>
+    </div>
+    <form name="imc" ng-if="imgCtrl.active" layout="column" ng-submit="imgCtrl.compute(imc)" novalidate>
+        <md-input-container class="md-block">
+            <label>Votre taille (en cm)</label>
+            <input type="number" min="1" ng-model="imgCtrl.size" required>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Votre poids (en kg)</label>
+            <input type="number" min="1" ng-model="imgCtrl.weight" required>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Votre âge (en année)</label>
+            <input type="number" min="1" ng-model="imgCtrl.age" required>
+        </md-input-container>
+        <label>Votre sexe</label>
+        <md-input-container class="md-block">
+            <md-radio-group ng-model="imgCtrl.sexe">
+                <md-radio-button value="0">Femme</md-radio-button>
+                <md-radio-button value="1" class="md-primary">Homme</md-radio-button>                
+            </md-radio-group>
+        </md-input-container>
+        <p ng-if="imgCtrl.result != null" class="center">Votre IMG est {{imgCtrl.result}} %</p>
+        <md-button flex type="submit" class="md-raised">Calculer</md-button>
+    </form>
+</div>

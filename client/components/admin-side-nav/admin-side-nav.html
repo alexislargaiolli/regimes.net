@@ -1,0 +1,28 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" ng-if="isLoggedIn()">
+    <md-toolbar class="md-tall md-accent">
+        <div ng-if="isLoggedIn()" layout="column" layout-padding class="profile-container">
+            <div flex></div>
+            <div layout-padding layout="column">
+                <div class="profile-name">{{ getCurrentUser().name }}</div>
+                <div class="profile-email">{{ getCurrentUser().email }}</div>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-list flex>
+            <md-list-item ui-sref="admin" ng-if="isAdmin()">
+                <md-icon md-svg-icon="action:settings" class="md-avatar-icon"></md-icon>
+                <div class="md-list-item-text" flex>
+                    Administration
+                </div>
+            </md-list-item>
+            <md-list-item ui-sref="admin.user" ng-if="isAdmin()">
+                <md-icon md-svg-icon="action:face" class="md-avatar-icon"></md-icon>
+                <div class="md-list-item-text" flex>
+                    Utilisateurs
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+    </md-content>
+</md-sidenav>

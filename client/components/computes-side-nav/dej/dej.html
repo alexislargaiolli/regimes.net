@@ -1,0 +1,35 @@
+<div ng-controller="DEJCtrl as dejCtrl" class="compute-block" layout-padding>
+    <div class="center" ng-if="dejCtrl.active == false" layout="column">
+        <md-button flex class="md-primary md-raised" ng-click="dejCtrl.setActive()">Calculer mon DEJ</md-button>
+        <p class="description">L'indice de masse corporelle (IMC) est une grandeur qui permet d'estimer la corpulence d'une personne.</p>
+    </div>    
+    <form name="imc" ng-if="dejCtrl.active" layout="column" ng-submit="dejCtrl.compute(imc)" novalidate>
+        <md-input-container class="md-block">
+            <label>Votre taille (en cm)</label>
+            <input type="number" min="1" ng-model="dejCtrl.size" required>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Votre poids (en kg)</label>
+            <input type="number" min="1" ng-model="dejCtrl.weight" required>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Votre âge (en année)</label>
+            <input type="number" min="1" ng-model="dejCtrl.age" required>
+        </md-input-container>
+        <label>Votre sexe</label>
+        <md-input-container class="md-block">
+            <md-radio-group ng-model="dejCtrl.sexe">
+                <md-radio-button value="0">Femme</md-radio-button>
+                <md-radio-button value="1" class="md-primary">Homme</md-radio-button>                
+            </md-radio-group>
+        </md-input-container>
+        <label>Votre niveau d'activité</label>
+        <md-input-container class="md-block">        	
+            <md-radio-group ng-model="dejCtrl.activity">
+                <md-radio-button value="{{activity.value}}" ng-repeat="activity in dejCtrl.activities">{{activity.label}}</md-radio-button>
+            </md-radio-group>
+        </md-input-container>
+        <p ng-if="dejCtrl.result != null" class="center">Votre DEJ est {{dejCtrl.result}} Kcal</p>
+        <md-button flex type="submit" class="md-raised">Calculer</md-button>
+    </form>
+</div>

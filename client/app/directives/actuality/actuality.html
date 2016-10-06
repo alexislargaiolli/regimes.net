@@ -1,0 +1,16 @@
+<div layout="row">
+	<div flex="40"><img class="acutality-poster" ng-src="{{image}}"></div>
+	<div flex="60">
+		<h3 layout="row">
+			<span>{{title}}</span>
+			<span flex></span>
+			<md-icon md-svg-icon="{{icon}}"></md-icon>
+		</h3>
+		<md-divider></md-divider>
+		<p>Acutalité éditée le {{date}}</p>
+		<p>{{content}}</p>
+		<div ng-transclude>
+
+		</div>
+	</div>
+</div>

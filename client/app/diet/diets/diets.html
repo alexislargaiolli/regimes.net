@@ -1,0 +1,24 @@
+<div class="main">
+    <div ng-include="'components/shell/shell.html'"></div>
+    <md-toolbar class="subtitle center">
+        <h1>{{diets.title}}</h1>
+    </md-toolbar>
+    <div layout="row" layout-align="center start">
+        <div layout-gt-sm="row" flex class="layout-max-width" layout-align="space-around stretch">
+            <div flex-gt-sm="70" layout-margin class="md-padding left">
+                <div ng-repeat="diet in diets.list">
+                    <actuality title="{{diet.title}}" content="{{diet.abstract}}" date="{{diet.date}}" image="{{diet.img}}">
+                        <div class="right">
+                            <md-button ui-sref="diet({id : diet._id})">En savoir plus</md-button>
+                        </div>
+                    </actuality>
+                    <md-divider></md-divider>
+                </div>
+            </div>
+            <div flex flex-gt-sm="30" layout-margin class="md-padding" class="md-primary">
+                <div ng-include="'components/computes-side-nav/computes-side-nav.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>

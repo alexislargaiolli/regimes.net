@@ -1,0 +1,24 @@
+<div class="main">
+    <div ng-include="'components/shell/shell.html'"></div>
+    <md-toolbar class="subtitle center">
+        <h1>Actualités</h1>
+    </md-toolbar>
+    <div layout="row" layout-align="center start">
+        <div layout-gt-sm="row" flex class="layout-max-width" layout-align="space-around stretch">
+            <div flex-gt-sm="70" layout-margin class="md-padding left">
+                <div ng-repeat="actuality in news.actualites">
+                    <actuality title="{{actuality.title}}" content="{{actuality.abstract}}" date="{{actuality.date}}" image="{{actuality.img}}" icon="av:library_books">
+                        <div class="right">
+                            <md-button ui-sref="actuality({id : actuality._id})">Lire la suite</md-button>
+                        </div>
+                    </actuality>
+                    <md-divider></md-divider>
+                </div>
+            </div>
+            <md-toolbar flex flex-gt-sm="30" layout-margin class="md-padding center" class="md-primary">
+                Right
+            </md-toolbar>
+        </div>
+    </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>

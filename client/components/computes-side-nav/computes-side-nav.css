@@ -1,0 +1,13 @@
+.compute-block{
+	margin-top:20px;
+	background:#fff;
+}
+
+.compute-block .description{
+	color:#666;
+	font-size:initial;
+}
+
+.compute-block label, .compute-block md-radio-button .md-label, .compute-block p{
+	color: #666;
+}
