@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('DEJCtrl', function($scope) {
+    .controller('DEJCtrl', function() {
         this.active = false;
         this.weight = null;
         this.size = null;
@@ -22,15 +22,15 @@ angular.module('regimesApp')
 
         this.setActive = function() {
             this.active = true;
-        }
+        };
 
         this.compute = function(form) {
             if (form.$valid) {
                 var size = this.size / 100;
-                var cst = this.sexe == 0 ? 230 : 259;
+                var cst = this.sexe === 0 ? 230 : 259;
                 var mb = cst * Math.pow(this.weight, 0.48) * Math.pow(size, 0.5) * Math.pow(this.age, -0.13);
                 var result = mb * this.activity;
                 this.result = Math.round(result);
             }
-        }
+        };
     });

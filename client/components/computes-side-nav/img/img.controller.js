@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('IMGCtrl', function($scope) {
+    .controller('IMGCtrl', function() {
         this.active = false;
         this.weight = null;
         this.size = null;
@@ -11,7 +11,7 @@ angular.module('regimesApp')
 
         this.setActive = function() {
             this.active = true;
-        }
+        };
 
         this.compute = function(form) {
             if (form.$valid) {
@@ -20,5 +20,5 @@ angular.module('regimesApp')
                 var result = (1.20 * imc) + (0.23 * this.age) - (10.8 * this.sexe) - 5.4;
                 this.result = Math.round((result) * 100) / 100;
             }
-        }
+        };
     });

@@ -1,26 +1,11 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('NewsCtrl', function($scope) {
-        this.actualites = [{
-            _id: 'seer',
-            date: '10/16/2010',
-            title: 'Zoom sur l\'école xdcx',
-            img: 'http://material.angularjs.org/latest/img/icons/angular-logo.svg',
-            abstract: 'sdfsdf ksdnf sdf kjdskjf ksdfk sdfkjsd fksdf ',
-            content: '  sdf dsfsd fsd fsdf sfdsdf sd fsd'
-        }, {
-            _id: 'seer',
-            date: '10/16/2010',
-            title: 'Zoom sur l\'école xdcx',
-            img: 'http://material.angularjs.org/latest/img/icons/angular-logo.svg',
-            abstract: 'sdfsdf ksdnf sdf kjdskjf ksdfk sdfkjsd fksdf ',
-            content: '  sdf dsfsd fsd fsdf sfdsdf sd fsd'
-        }];
+    .controller('ActualitiesCtrl', function(Actuality) {
+        var self = this;
+        this.list = [];        
 
-        this.selectedActuality = null;
-
-        this.select = function(actuality){
-        	this.selectedActuality = actuality;
-        }
+        Actuality.query({sort : 'date'}, function(actualites){
+            self.list = actualites;
+        });
     });

@@ -1,26 +1,18 @@
-<div class="main">
-    <div ng-include="'components/shell/shell.html'"></div>
-    <md-toolbar class="subtitle center">
-        <h1>{{diet.current.title}}</h1>
-    </md-toolbar>
-    <div layout="row" layout-align="center start">
-        <div layout-gt-sm="row" flex class="layout-max-width" layout-align="space-around stretch">
-            <div flex-gt-sm="70" layout-margin class="md-padding left">
-                <actuality title="En quelques mots" content="{{diet.current.abstract}}" date="{{diet.current.date}}" image="{{diet.current.img}}"></actuality>
-                <md-card>
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline">Plus en détail</span>
-                        </md-card-title-text>
-                    </md-card-title>
-                    <md-card-content layout="row" layout-align="space-between">
-                        <p>{{diet.current.content}}</p>
-                    </md-card-content>
-                </md-card>
-            </div>
-            <div flex flex-gt-sm="30" layout-margin class="md-padding" class="md-primary">
-            </div>
-        </div>
-    </div>
-</div>
-<div ng-include="'components/footer/footer.html'"></div>
+<two-column-template template-title="{{diet.current.title}}">
+    <left-column>
+        <actuality title="En quelques mots" content="{{diet.current.abstract}}" date="{{diet.current.date}}" image="{{diet.current.image}}"></actuality>
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Plus en détail</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="space-between">
+                <div ng-bind-html="diet.current.content"></div>
+            </md-card-content>
+        </md-card>
+    </left-column>
+    <right-column>
+        <div ng-include="'app/diet/diet/side-nav/side-nav.html'"></div>
+    </right-column>
+</two-column-template>

@@ -1,3 +1,32 @@
+.layout-max-width {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.main {
+  min-height: calc(100vh - 48px);
+}
+
+.bg1{
+  background:#811da7;
+}
+
+.color1{
+  color:#811da7;
+}
+
+.bg2{
+  background: #4aac09;
+}
+
+.color2{
+  color: #4aac09;
+}
+
+.color3{
+  color:#fff;
+}
+
 .center{
 	text-align: center;
 }

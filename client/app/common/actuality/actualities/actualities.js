@@ -6,6 +6,6 @@ angular.module('regimesApp')
       .state('actualities', {
         url: '/actualities',
         templateUrl: 'app/common/actuality/actualities/actualities.html',
-        controller: 'NewsCtrl as news'
+        controller: 'ActualitiesCtrl as actualities'
       });
   });

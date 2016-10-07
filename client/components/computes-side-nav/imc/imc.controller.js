@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('IMCCtrl', function($scope) {
+    .controller('IMCCtrl', function() {
         this.active = false;
         this.weight = null;
         this.size = null;
@@ -9,7 +9,7 @@ angular.module('regimesApp')
 
         this.setActive = function() {
             this.active = true;
-        }
+        };
 
         this.compute = function(form) {
             if (form.$valid) {
@@ -18,6 +18,6 @@ angular.module('regimesApp')
             }else{
               this.result = null;
             }
-        }
+        };
 
     });

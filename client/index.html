@@ -2,129 +2,151 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title></title>
+    <title>Régimes.net</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
-      <!-- bower:css -->
-      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-      <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.css" />
-      <!-- endbower -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.css" />
+    <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
-      <!-- injector:css -->
-      <link rel="stylesheet" href="app/account/login/login.css">
-      <link rel="stylesheet" href="app/account/signup/signup.css">
-      <link rel="stylesheet" href="app/admin/admin.css">
-      <link rel="stylesheet" href="app/app.css">
-      <link rel="stylesheet" href="app/common/actuality/actualities/actualities.css">
-      <link rel="stylesheet" href="app/common/actuality/actuality/actuality.css">
-      <link rel="stylesheet" href="app/common/bibliography/bibliography.css">
-      <link rel="stylesheet" href="app/common/contact/contact.css">
-      <link rel="stylesheet" href="app/common/legal/legal.css">
-      <link rel="stylesheet" href="app/diet/clinics/clinics.css">
-      <link rel="stylesheet" href="app/diet/diet/diet.css">
-      <link rel="stylesheet" href="app/diet/diets/diets.css">
-      <link rel="stylesheet" href="app/diet/submit_diet/submit_diet.css">
-      <link rel="stylesheet" href="app/directives/actuality/actuality.css">
-      <link rel="stylesheet" href="app/main/main.css">
-      <link rel="stylesheet" href="app/utils.css">
-      <link rel="stylesheet" href="components/computes-side-nav/computes-side-nav.css">
-      <link rel="stylesheet" href="components/footer/footer.css">
-      <!-- endinjector -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="app/account/login/login.css">
+    <link rel="stylesheet" href="app/account/signup/signup.css">
+    <link rel="stylesheet" href="app/admin/admin.css">
+    <link rel="stylesheet" href="app/app.css">
+    <link rel="stylesheet" href="app/common/actuality/actualities/actualities.css">
+    <link rel="stylesheet" href="app/common/actuality/actuality/actuality.css">
+    <link rel="stylesheet" href="app/common/bibliography/bibliography.css">
+    <link rel="stylesheet" href="app/common/contact/contact.css">
+    <link rel="stylesheet" href="app/common/legal/legal.css">
+    <link rel="stylesheet" href="app/diet/clinics/clinics.css">
+    <link rel="stylesheet" href="app/diet/diet/diet.css">
+    <link rel="stylesheet" href="app/diet/diet/side-nav/side-nav.css">
+    <link rel="stylesheet" href="app/diet/diets/diets.css">
+    <link rel="stylesheet" href="app/diet/submit_diet/submit_diet.css">
+    <link rel="stylesheet" href="app/directives/actuality/actuality.css">
+    <link rel="stylesheet" href="app/directives/main-template/main-template.css">
+    <link rel="stylesheet" href="app/directives/two-column-template/two-column-template.css">
+    <link rel="stylesheet" href="app/main/main.css">
+    <link rel="stylesheet" href="app/utils.css">
+    <link rel="stylesheet" href="components/computes-side-nav/computes-side-nav.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <!-- endinjector -->
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Oswald:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
-  <body ng-app="regimesApp">
+</head>
+
+<body ng-app="regimesApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <!-- Add your site or application content here -->
     <div ui-view=""></div>
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-XXXXX-X');
-      ga('send', 'pageview');
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
     </script>
-
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <!-- build:js({client,node_modules}) app/vendor.js -->
-      <!-- bower:js -->
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-resource/angular-resource.js"></script>
-      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-      <script src="bower_components/angular-messages/angular-messages.js"></script>
-      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="bower_components/angular-animate/angular-animate.js"></script>
-      <script src="bower_components/angular-aria/angular-aria.js"></script>
-      <script src="bower_components/angular-material/angular-material.js"></script>
-      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="bower_components/angular-material-data-table/dist/md-data-table.js"></script>
-      <!-- endbower -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-material-data-table/dist/md-data-table.js"></script>
+    <script src="bower_components/tinymce/tinymce.js"></script>
+    <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <!-- endbower -->
     <!-- endbuild -->
-
-        
-        <!-- build:js({.tmp,client}) app/app.js -->
-        
-        <script src="app/app.js"></script>
-          <!-- injector:js -->
-          <script src="app/account/account.js"></script>
-          <script src="app/account/login/login.controller.js"></script>
-          <script src="app/account/settings/settings.controller.js"></script>
-          <script src="app/account/signup/signup.controller.js"></script>
-          <script src="app/admin/admin.controller.js"></script>
-          <script src="app/admin/admin.js"></script>
-          <script src="app/admin/user/user.controller.js"></script>
-          <script src="app/admin/user/user.js"></script>
-          <script src="app/common/actuality/actualities/actualities.controller.js"></script>
-          <script src="app/common/actuality/actualities/actualities.js"></script>
-          <script src="app/common/actuality/actuality/actuality.controller.js"></script>
-          <script src="app/common/actuality/actuality/actuality.js"></script>
-          <script src="app/common/bibliography/bibliography.controller.js"></script>
-          <script src="app/common/bibliography/bibliography.js"></script>
-          <script src="app/common/contact/contact.controller.js"></script>
-          <script src="app/common/contact/contact.js"></script>
-          <script src="app/common/legal/legal.controller.js"></script>
-          <script src="app/common/legal/legal.js"></script>
-          <script src="app/diet/clinics/clinics.controller.js"></script>
-          <script src="app/diet/clinics/clinics.js"></script>
-          <script src="app/diet/diet/diet.controller.js"></script>
-          <script src="app/diet/diet/diet.js"></script>
-          <script src="app/diet/diets/diets.controller.js"></script>
-          <script src="app/diet/diets/diets.js"></script>
-          <script src="app/diet/submit_diet/submit_diet.controller.js"></script>
-          <script src="app/diet/submit_diet/submit_diet.js"></script>
-          <script src="app/directives/actuality/actuality.directive.js"></script>
-          <script src="app/main/main.controller.js"></script>
-          <script src="app/main/main.js"></script>
-          <script src="components/auth/auth.service.js"></script>
-          <script src="components/auth/user.service.js"></script>
-          <script src="components/computes-side-nav/dej/dej.controller.js"></script>
-          <script src="components/computes-side-nav/imc/imc.controller.js"></script>
-          <script src="components/computes-side-nav/img/img.controller.js"></script>
-          <script src="components/mongoose-error/mongoose-error.directive.js"></script>
-          <script src="components/shell/dialog/dialog.controller.js"></script>
-          <script src="components/shell/shell.controller.js"></script>
-          <!-- endinjector -->
-        <!-- endbuild -->
+    <!-- build:js({.tmp,client}) app/app.js -->
+    <script src="app/app.js"></script>
+    <!-- injector:js -->
+    <script src="app/account/account.js"></script>
+    <script src="app/account/login/login.controller.js"></script>
+    <script src="app/account/settings/settings.controller.js"></script>
+    <script src="app/account/signup/signup.controller.js"></script>
+    <script src="app/admin/actuality/actuality.controller.js"></script>
+    <script src="app/admin/actuality/actuality.js"></script>
+    <script src="app/admin/actuality/actuality.resource.js"></script>
+    <script src="app/admin/admin.controller.js"></script>
+    <script src="app/admin/admin.js"></script>
+    <script src="app/admin/diet/diet.controller.js"></script>
+    <script src="app/admin/diet/diet.js"></script>
+    <script src="app/admin/diet/diet.resource.js"></script>
+    <script src="app/admin/user/user.controller.js"></script>
+    <script src="app/admin/user/user.js"></script>
+    <script src="app/common/actuality/actualities/actualities.controller.js"></script>
+    <script src="app/common/actuality/actualities/actualities.js"></script>
+    <script src="app/common/actuality/actuality/actuality.controller.js"></script>
+    <script src="app/common/actuality/actuality/actuality.js"></script>
+    <script src="app/common/bibliography/bibliography.controller.js"></script>
+    <script src="app/common/bibliography/bibliography.js"></script>
+    <script src="app/common/contact/contact.controller.js"></script>
+    <script src="app/common/contact/contact.js"></script>
+    <script src="app/common/legal/legal.controller.js"></script>
+    <script src="app/common/legal/legal.js"></script>
+    <script src="app/diet/clinics/clinics.controller.js"></script>
+    <script src="app/diet/clinics/clinics.js"></script>
+    <script src="app/diet/diet/diet.controller.js"></script>
+    <script src="app/diet/diet/diet.js"></script>
+    <script src="app/diet/diets/diets.controller.js"></script>
+    <script src="app/diet/diets/diets.js"></script>
+    <script src="app/diet/submit_diet/submit_diet.controller.js"></script>
+    <script src="app/diet/submit_diet/submit_diet.js"></script>
+    <script src="app/directives/actuality/actuality.directive.js"></script>
+    <script src="app/directives/main-template/main-template.directive.js"></script>
+    <script src="app/directives/two-column-template/two-column-template.directive.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/main/main.js"></script>
+    <script src="components/auth/auth.service.js"></script>
+    <script src="components/auth/user.service.js"></script>
+    <script src="components/computes-side-nav/dej/dej.controller.js"></script>
+    <script src="components/computes-side-nav/imc/imc.controller.js"></script>
+    <script src="components/computes-side-nav/img/img.controller.js"></script>
+    <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+    <script src="components/shell/dialog/dialog.controller.js"></script>
+    <script src="components/shell/shell.controller.js"></script>
+    <!-- endinjector -->
+    <!-- endbuild -->
 </body>
+
 </html>

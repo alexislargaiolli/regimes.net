@@ -1,0 +1,48 @@
+<div class="bg1 color3 center" layout-padding>
+    <h3>Donnez votre opinion</h3>
+    <div class="compute-block" layout-padding>
+        <div layout="column">
+            <form id="opinionForm" ng-submit="diet.submitOpinion(opinion)" name="opinion" novalidate>
+                <p class="description">Que pensez-vous de ce régime ?</p>
+                <md-divider></md-divider>
+                <div>
+                    <label>Adaptabilité</label>
+                    <md-radio-group name="adaptability" ng-model="diet.opinion.adaptability" layout="row" layout-align="space-around" required>
+                        <md-radio-button value="0">Mauvais</md-radio-button>
+                        <md-radio-button value="1">Bon</md-radio-button>
+                        <md-radio-button value="2">Très bon</md-radio-button>
+                    </md-radio-group>
+                </div>
+                <div>
+                    <label layout-padding>Efficacité</label>
+                    <md-radio-group ng-model="diet.opinion.efficiency" layout="row" layout-align="space-around">
+                        <md-radio-button value="0">Mauvais</md-radio-button>
+                        <md-radio-button value="1">Bon</md-radio-button>
+                        <md-radio-button value="2">Très bon</md-radio-button>
+                    </md-radio-group>
+                </div>
+                <div>
+                    <label layout-padding>Impact santé</label>
+                    <md-radio-group ng-model="diet.opinion.health" layout="row" layout-align="space-around">
+                        <md-radio-button value="0">Mauvais</md-radio-button>
+                        <md-radio-button value="1">Bon</md-radio-button>
+                        <md-radio-button value="2">Très bon</md-radio-button>
+                    </md-radio-group>
+                </div>
+                <div>
+                    <label layout-padding>Coût</label>
+                    <md-radio-group ng-model="diet.opinion.cost" layout="row" layout-align="space-around">
+                        <md-radio-button value="0">Mauvais</md-radio-button>
+                        <md-radio-button value="1">Bon</md-radio-button>
+                        <md-radio-button value="2">Très bon</md-radio-button>
+                    </md-radio-group>
+                </div>
+                <div ng-if="opinion.$submitted && !opinion.$valid">
+                    <label>Veuillez rensigner tous les champs.</label>
+                </div>
+                <md-divider></md-divider>
+                <md-button flex class="md-raised md-primary" type="submit">Afficher les résultats</md-button>
+            </form>
+        </div>
+    </div>
+</div>

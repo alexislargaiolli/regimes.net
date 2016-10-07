@@ -1,36 +1,27 @@
-<div class="main">
-    <div ng-include="'components/shell/shell.html'"></div>
-    <md-toolbar class="subtitle center">
-        <h1>On en parle</h1>
-    </md-toolbar>
-    <div layout="row" layout-align="center start">
-        <div layout-gt-sm="row" flex class="layout-max-width" layout-align="space-around stretch">
-            <div flex-gt-sm="70" layout-margin class="md-padding left">
-                <actuality title="{{main.lastNews.title}}" content="{{main.lastNews.abstract}}" date="{{main.lastNews.date}}" image="{{main.lastNews.img}}" icon="av:library_books">
-                    <div layout="row">
-                        <md-button ui-sref="actualities" class="md-primary md-raised" flex="70">D'actualités</md-button>
-                        <md-button ui-sref="actuality({id : main.lastNews._id})" class="md-accent md-raised" flex="30">Lire la suite</md-button>
-                    </div>
-                </actuality>
-                <md-divider></md-divider>
-                <md-card>
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline">{{main.video.title}}</span>
-                        </md-card-title-text>
-                        <md-card-avatar>
-                            <md-icon md-svg-icon="av:video_library"></md-icon>
-                        </md-card-avatar>
-                    </md-card-title>
-                    <md-card-content layout="row" layout-align="space-between">                        
-                        <iframe width="100%" height="400" ng-src="{{main.trustSrc(main.video.url)}}" frameborder="0" allowfullscreen></iframe>
-                    </md-card-content>
-                </md-card>
+<two-column-template template-title="On en parle">
+    <left-column>
+        <actuality title="{{main.lastNews.title}}" content="{{main.lastNews.content}}" date="{{main.lastNews.date}}" image="{{main.lastNews.image}}" icon="av:library_books">
+            <div layout="row" layout-align="end end">
+                <md-button ui-sref="actualities" class="md-primary md-raised" flex="70">D'actualités</md-button>
+                <md-button ui-sref="actuality({id : main.lastNews._id})" class="md-accent md-raised" flex="30">Lire la suite</md-button>
             </div>
-            <md-toolbar flex flex-gt-sm="30" layout-margin class="md-padding center" class="md-primary">
-                Right
-            </md-toolbar>
-        </div>
-    </div>
-</div>
-<div ng-include="'components/footer/footer.html'"></div>
+        </actuality>
+        <md-divider></md-divider>
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{main.video.title}}</span>
+                </md-card-title-text>
+                <md-card-avatar>
+                    <md-icon md-svg-icon="av:video_library"></md-icon>
+                </md-card-avatar>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="space-between">
+                <iframe width="100%" height="400" ng-src="{{main.trustSrc(main.video.url)}}" frameborder="0" allowfullscreen></iframe>
+            </md-card-content>
+        </md-card>
+    </left-column>
+    <right-column>
+        <div ng-include="'components/computes-side-nav/computes-side-nav.html'"></div>
+    </right-column>
+</two-column-template>

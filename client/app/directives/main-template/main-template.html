@@ -1,0 +1,12 @@
+<div class="main">
+    <div ng-include="'components/shell/shell.html'"></div>
+    <md-toolbar class="subtitle center">
+        <h1>{{templateTitle}}</h1>
+    </md-toolbar>
+    <div layout="row" layout-align="center start">
+        <div layout-gt-sm="row" flex class="layout-max-width main-container" layout-align="space-around stretch" ng-transclude>
+            
+        </div>
+    </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>

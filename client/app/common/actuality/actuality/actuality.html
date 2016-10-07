@@ -1,17 +1,13 @@
-<div class="main">
-    <div ng-include="'components/shell/shell.html'"></div>
-    <md-toolbar class="subtitle center">
-        <h1>{{actuality.current.title}}</h1>
-    </md-toolbar>
-    <div layout="row" layout-align="center start">
-        <div layout-gt-sm="row" flex class="layout-max-width" layout-align="space-around stretch">
-            <div flex-gt-sm="70" layout-margin class="md-padding left">
-                
-            </div>
-            <md-toolbar flex flex-gt-sm="30" layout-margin class="md-padding center" class="md-primary">
-                Right
-            </md-toolbar>
-        </div>
-    </div>
-</div>
-<div ng-include="'components/footer/footer.html'"></div>
+<two-column-template template-title="Actualités">
+    <left-column>
+        <actuality title="{{actuality.current.title}}" date="{{actuality.current.date}}" image="{{actuality.current.image}}"></actuality>
+        <md-card>
+            <md-card-content layout="row" layout-align="space-between">
+                <div ng-bind-html="actuality.current.content"></div>
+            </md-card-content>
+        </md-card>
+    </left-column>
+    <right-column>
+        
+    </right-column>
+</two-column-template>

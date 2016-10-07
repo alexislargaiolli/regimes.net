@@ -1,0 +1,33 @@
+<md-dialog aria-label="Nouveau">
+    <form name="createForm" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-icon="navigation:close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Titre</label>
+                    <input ng-model="diet.title" type="text" required="true">
+                </md-input-container>
+                <md-input-container>
+                    <label>Type de régime</label>
+                    <md-select ng-model="diet.dietType">
+                        <md-option ng-repeat="dietType in dietTypes" ng-value="dietType.value">
+                            {{dietType.label}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button type="submit" ng-click="addDiet()">
+                Ajouter
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

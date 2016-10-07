@@ -1,14 +1,20 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('DietCtrl', function($scope, $stateParams) {        
+    .controller('DietCtrl', function($scope, $stateParams, Diet) {        
+        var self = this;
         this.dietId = $stateParams.id;
-        this.current = {
-            _id: 'segsdf',
-            date: '10/16/2010',
-            title: 'Régime dunkan',
-            img: 'http://material.angularjs.org/latest/img/icons/angular-logo.svg',
-            abstract: 'sdfsdf ksdnf sdf kjdskjf ksdfk sdfkjsd fksdf ',
-            content: '  sdf dsfsd fsd fsdf sfdsdf sd fsd'
-        };
+        this.current = null;
+        this.opinion = {};
+
+        function activate(){
+            Diet.get({id:$stateParams.id}, function(diet){
+                self.current = diet;
+            });
+        }
+        activate();
+
+        this.submitOpinion = function(form){
+            console.log(form.$valid);
+        }
     });

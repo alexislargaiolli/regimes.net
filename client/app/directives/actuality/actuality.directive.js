@@ -12,7 +12,6 @@ angular.module('regimesApp')
                 content: '@',
                 image: '@',
                 icon: '@'
-            },
-            link: function(scope, element, attrs) {}
+            }
         };
     });

@@ -1,3 +1,7 @@
-<div ng-include="'components/shell/shell.html'"></div>
-
+<div ng-controller="ShellCtrl" class="main-shell">
+    <header>
+        <div ng-include="'components/admin-toolbar/admin-toolbar.html'"></div>
+        <div ng-include="'components/admin-side-nav/admin-side-nav.html'"></div>
+    </header>
+</div>
 <div ui-view=""></div>

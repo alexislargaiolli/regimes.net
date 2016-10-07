@@ -1,14 +1,12 @@
 <md-content class="md-padding">
     <md-card class="login-card">
-        <md-card-title ui-sref="main">
+        <md-card-title flex ui-sref="main">
             <md-card-title-text>
-                <span class="md-headline">LOGO</span>
+                <img id="logo" src="assets/images/logo.png">
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
             <h2 class="md-title">Login</h2>
-            <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-            <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
             <form name="form" ng-submit="login(form)" novalidate>
                 <md-input-container>
                     <label>Email</label>

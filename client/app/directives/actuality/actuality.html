@@ -1,16 +1,19 @@
-<div layout="row">
-	<div flex="40"><img class="acutality-poster" ng-src="{{image}}"></div>
-	<div flex="60">
-		<h3 layout="row">
-			<span>{{title}}</span>
-			<span flex></span>
-			<md-icon md-svg-icon="{{icon}}"></md-icon>
-		</h3>
-		<md-divider></md-divider>
-		<p>Acutalité éditée le {{date}}</p>
-		<p>{{content}}</p>
-		<div ng-transclude>
-
-		</div>
-	</div>
+<div layout="row" class="actuality-wrapper">
+    <div flex="40" layout="column" layout-align="center center" layout-margin style="background:url('{{image}}') no-repeat center center;" class="acutality-poster">
+        
+    </div>
+    <div flex="60" layout-margin>
+        <div>
+            <h3 layout="row">
+				<span>{{title}}</span>
+				<span flex></span>
+				<md-icon md-svg-icon="{{icon}}"></md-icon>
+			</h3>
+            <md-divider></md-divider>
+            <p>Actualité éditée le {{date | date : 'dd/MM/yyyy'}}</p>
+            <div ng-bind-html="content"></div>
+        </div>
+        <div ng-transclude>
+        </div>
+    </div>
 </div>

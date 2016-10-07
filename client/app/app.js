@@ -8,7 +8,9 @@ angular.module('regimesApp', [
   'ngMessages',
   'md.data.table',
   'ui.router',
-  'ngMaterial'
+  'ngMaterial',
+  'ui.tinymce',
+  'ngFileUpload'
 ])
   .config(function($mdIconProvider) {
     $mdIconProvider
@@ -36,11 +38,55 @@ angular.module('regimesApp', [
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+    $mdThemingProvider.definePalette('regimePurple', {
+    '50': 'EDE7F6',
+    '100': 'D1C4E9',
+    '200': 'B39DDB',
+    '300': '9575CD',
+    '400': '7E57C2',
+    '500': '811da7',
+    '600': '5E35B1',
+    '700': '512DA8',
+    '800': '4527A0',
+    '900': '311B92',
+    'A100': 'B388FF',
+    'A200': '7C4DFF',
+    'A400': '651FFF',
+    'A700': '6200EA',
+    'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                        // on this palette should be dark or light
+    'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+     '200', '300', '400', 'A100'],
+    'contrastLightColors': undefined    // could also specify this if default was 'dark'
+  });
+ $mdThemingProvider.definePalette('regimeGreen', {
+    '50': 'F1F8E9',
+    '100': 'DCEDC8',
+    '200': 'C5E1A5',
+    '300': 'AED581',
+    '400': '9CCC65',
+    '500': '4aac09',
+    '600': '7CB342',
+    '700': '689F38',
+    '800': '558B2F',
+    '900': '33691E',
+    'A100': 'CCFF90',
+    'A200': '4aac09',
+    'A400': '76FF03',
+    'A700': '64DD17',
+    'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                        // on this palette should be dark or light
+    'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+     '200', '300', '400', 'A100'],
+    'contrastLightColors': undefined    // could also specify this if default was 'dark'
+  });
+
+
+
     $mdThemingProvider.theme('default')
-    .primaryPalette('purple')
-    .accentPalette('light-green', {
-      'default': '700'
-    });
+    .primaryPalette('regimePurple')
+    .accentPalette('regimeGreen');
+    
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {

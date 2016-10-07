@@ -1,0 +1,15 @@
+#opinionForm label{
+	font-size:13px;
+	font-weight: bold;
+}
+#opinionForm .md-label{
+	font-size:11px;
+}
+
+#opinionForm>div{
+	padding:10px 0;
+}
+#opinionForm label{
+	padding:10px;
+	display: block;
+}

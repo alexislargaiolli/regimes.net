@@ -1,3 +1,10 @@
+.actuality-wrapper{
+	min-height:280px;
+}
+
 .acutality-poster{
-	max-height:250px;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
