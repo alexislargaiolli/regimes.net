@@ -38,3 +38,42 @@
 .right{
 	text-align: right;
 }
+
+.no-radius{
+  border-radius: 0;
+}
+
+.btn-txt-icon{
+  margin:0 10px;
+  font-size:20px;
+}
+
+.mr0{
+  margin-right:0;
+}
+
+.ml0{
+  margin-left:0;
+}
+
+.mt0{
+  margin-top:0;
+}
+
+.mb0{
+  margin-bottom:0;
+}
+
+.mv10{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.mh10{
+  margin-left:10px;
+  margin-right:10px; 
+}
+
+.w100{
+  width:100%;
+}

@@ -26,7 +26,7 @@ exports.index = function(req, res) {
 
 
     var query = null;
-    if (req.query.count == 'true') {
+    if (req.query.count === 'true') {
         query = Actuality.count({published : true});
     } else {
         query = Actuality.find({published : true});

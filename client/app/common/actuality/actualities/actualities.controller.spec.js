@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: NewsCtrl', function () {
+describe('Controller: ActualitiesCtrl', function () {
 
   // load the controller's module
   beforeEach(module('regimesApp'));
 
-  var NewsCtrl, scope;
+  var ActualitiesCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    NewsCtrl = $controller('NewsCtrl', {
+    ActualitiesCtrl = $controller('ActualitiesCtrl', {
       $scope: scope
     });
   }));

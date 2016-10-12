@@ -54,6 +54,10 @@
                     <label>Titre</label>
                     <input ng-model="selectedActuality.title" type="text" required="true">
                 </md-input-container>
+                <label>En bref</label>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <textarea ng-model="selectedActuality.abstract" ui-tinymce rows="3" md-select-on-focus></textarea>
+                </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>
                         Contenu

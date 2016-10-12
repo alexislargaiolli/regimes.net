@@ -92,31 +92,36 @@ angular.module('regimesApp')
                 .cancel('Non, annuler');
 
             $mdDialog.show(confirm).then(function() {
-                var success = function() {
-                    var index = $scope.selected.indexOf(eltToDelete);
-                    $scope.selected.splice(index, 1);
-                    $scope.loadDatas();
-                    $mdToast.show(
-                        $mdToast.simple()
-                        .textContent('Suppression réussie.')
-                        .position('bottom right')
-                        .toastClass('success-toast')
-                        .hideDelay(3000)
-                    );
-                };
-                var error = function() {
-                    $mdToast.show(
-                        $mdToast.simple()
-                        .textContent('Erreur lors de la suppression...')
-                        .position('bottom right')
-                        .toastClass('error-toast')
-                        .hideDelay(3000)
-                    );
-                };
+                function deleteElt(eltToDelete) {
+                    var success = function() {
+                        var index = $scope.selected.indexOf(eltToDelete);
+                        $scope.selected.splice(index, 1);
+                        $scope.loadDatas();
+                        $mdToast.show(
+                            $mdToast.simple()
+                            .textContent('Suppression réussie.')
+                            .position('bottom right')
+                            .toastClass('success-toast')
+                            .hideDelay(3000)
+                        );
+                    };
+                    var error = function() {
+                        $mdToast.show(
+                            $mdToast.simple()
+                            .textContent('Erreur lors de la suppression...')
+                            .position('bottom right')
+                            .toastClass('error-toast')
+                            .hideDelay(3000)
+                        );
+                    };
+
+
+                    User.delete({}, eltToDelete, success, error);
+                }
 
                 for (var i = 0; i < $scope.selected.length; i++) {
                     var eltToDelete = $scope.selected[i];
-                    User.delete({}, eltToDelete, success, error);
+                    deleteElt(eltToDelete);
                 }
             }, function() {
 

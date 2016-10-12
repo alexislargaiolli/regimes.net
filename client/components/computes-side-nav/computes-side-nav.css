@@ -1,13 +1,16 @@
+.compute-side-bar h3{
+	margin-bottom:0;
+}
+
 .compute-block{
-	margin-top:20px;
 	background:#fff;
 }
 
 .compute-block .description{
-	color:#666;
-	font-size:initial;
+	color:#828282;
+	font-size:12px;
 }
 
-.compute-block label, .compute-block md-radio-button .md-label, .compute-block p{
-	color: #666;
+.compute-block label, .compute-block md-radio-button .md-label, .compute-block p, .compute-block .md-raised:not(.md-primary) span{
+	color: #828282;
 }

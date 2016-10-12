@@ -14,7 +14,7 @@ exports.index = function(req, res) {
         selector.dietType = type;
     }
     var query = null;
-    if (req.query.count == 'true') {
+    if (req.query.count === 'true') {
         query = Diet.count(selector);
     } else {
         query = Diet.find(selector);

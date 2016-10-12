@@ -41,7 +41,7 @@ module.exports = function(app) {
     }
 
     if ('development' === env || 'test' === env) {
-        config.uploadDir = path.join(config.root, '.tmp', 'uploads');
+        config.uploadDir = path.join(config.root, 'client', 'uploads');
         config.uploadURL = '/uploads';
         app.use(require('connect-livereload')());
         app.use(express.static(path.join(config.root, '.tmp')));

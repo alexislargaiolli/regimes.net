@@ -14,7 +14,7 @@ angular.module('regimesApp')
         activate();
 
         this.video =   {
-            title: 'Test vidéo',            
+            title: 'Diététique et nutrition : des métiers d\'avenir !',            
             url: 'https://www.youtube.com/embed/Rut2zFWoo3Q'
         };
 

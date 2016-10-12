@@ -1,13 +1,15 @@
 <two-column-template template-title="On en parle">
     <left-column>
-        <actuality title="{{main.lastNews.title}}" content="{{main.lastNews.content}}" date="{{main.lastNews.date}}" image="{{main.lastNews.image}}" icon="av:library_books">
+        <actuality title="{{main.lastNews.title}}" content="{{main.lastNews.abstract}}" date="{{main.lastNews.date}}" image="{{main.lastNews.image}}" icon="av:library_books">
             <div layout="row" layout-align="end end">
-                <md-button ui-sref="actualities" class="md-primary md-raised" flex="70">D'actualités</md-button>
-                <md-button ui-sref="actuality({id : main.lastNews._id})" class="md-accent md-raised" flex="30">Lire la suite</md-button>
+                <md-button ui-sref="actualities" class="md-primary md-raised big-button no-radius left ml0 mb0" flex="65">                    
+                    <span class="btn-txt-icon">+</span>D'actualités
+                </md-button>
+                <md-button ui-sref="actuality({id : main.lastNews._id})" class="md-accent md-raised big-button mr0 mb0" flex="35"><span class="btn-txt-icon">></span>Lire la suite</md-button>
             </div>
         </actuality>
         <md-divider></md-divider>
-        <md-card>
+        <md-card class="content-wrapper">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{main.video.title}}</span>

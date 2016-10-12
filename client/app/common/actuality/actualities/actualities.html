@@ -1,9 +1,9 @@
 <two-column-template template-title="Actualités">
     <left-column>
         <div ng-repeat="actuality in actualities.list">
-                    <actuality title="{{actuality.title}}" content="{{actuality.content}}" date="{{actuality.date}}" image="{{actuality.image}}" icon="av:library_books">
+                    <actuality title="{{actuality.title}}" content="{{actuality.abstract}}" date="{{actuality.date}}" image="{{actuality.image}}" icon="av:library_books">
                         <div class="right">
-                            <md-button ui-sref="actuality({id : actuality._id})">Lire la suite</md-button>
+                            <md-button ui-sref="actuality({id : actuality._id})" class="md-accent md-raised big-button mr0"><span class="btn-txt-icon">></span>Lire la suite</md-button>
                         </div>
                     </actuality>
                     <md-divider></md-divider>

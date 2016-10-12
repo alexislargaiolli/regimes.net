@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 var ActualitySchema = new Schema({
   date: Date,
   title: String,
+  abstract: String,
   content: String,
   image: String,
   published: Boolean

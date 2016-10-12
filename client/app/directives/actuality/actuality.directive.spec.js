@@ -13,9 +13,10 @@ describe('Directive: actuality', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<actuality></actuality>');
+    var title = 'test';
+    element = angular.element('<actuality title="'+ title +'"></actuality>');
     element = $compile(element)(scope);
     scope.$apply();
-    expect(element.text()).toBe('this is the actuality directive');
+    expect(element.html()).toContain(title);
   }));
 });

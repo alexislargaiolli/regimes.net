@@ -45,10 +45,30 @@ button, select, html, textarea, input{
   font-size:12px;
 }
 
+.md-button span{
+    vertical-align: middle;
+}
+
 .main-container{
   padding:40px 0;
 }
 
 .subtitle{
-  font-size:15px;
+  font-size:16px;
+}
+
+.big-button{
+  padding:7px;
+  font-size: 14px;
+}
+
+.content-wrapper .md-headline{
+  font-family:Oswald;
+  color:#535054;
+  font-size:30px;
+}
+
+.content-wrapper{
+   border-left:5px solid #811DA7;
+   margin:20px 0 0 0;
 }

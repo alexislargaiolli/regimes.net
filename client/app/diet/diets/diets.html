@@ -3,7 +3,7 @@
         <div ng-repeat="diet in diets.list">
             <actuality title="{{diet.title}}" content="{{diet.abstract}}" date="{{diet.date}}" image="{{diet.image}}">
                 <div class="right">
-                    <md-button ui-sref="diet({id : diet._id})">En savoir plus</md-button>
+                    <md-button ui-sref="diet({id : diet._id})" class="md-accent md-raised big-button mr0 mb0"><span class="btn-txt-icon">></span>En savoir plus</md-button>
                 </div>
             </actuality>
             <md-divider></md-divider>

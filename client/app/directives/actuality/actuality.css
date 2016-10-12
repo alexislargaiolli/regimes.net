@@ -1,5 +1,17 @@
 .actuality-wrapper{
 	min-height:280px;
+	margin-bottom:20px;
+}
+
+.actuality-title{
+	font-family:Oswald;
+	color:#535054;
+	font-size:20px;
+}
+.actuality-date{
+	color:#a3a3a3;
+	font-size:14px;
+	font-family: arial;
 }
 
 .acutality-poster{
@@ -7,4 +19,9 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  border-left:5px solid #4aac09;
+}
+
+.actuality-content{
+	text-align: justify;
 }

@@ -16,5 +16,5 @@ angular.module('regimesApp')
 
         this.submitOpinion = function(form){
             console.log(form.$valid);
-        }
+        };
     });
