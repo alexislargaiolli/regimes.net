@@ -5,19 +5,14 @@ var fs = require('fs');
 var path = require('path');
 var config = require('../../config/environment');
 var Actuality = require('./actuality.model');
+var cloudinary = require('cloudinary');
 
-exports.uploadImage = function(req, res) {
-    var data = _.pick(req.body, 'type'),
-        file = req.files.file;
+exports.uploadImage = function(req, res, next) {
 
-    fs.readFile(file.path, function(err, data) {
-        // ...
-        var newPath = config.uploadDir + "/" + file.name;
-        var url = path.join(config.uploadURL, file.name);
-        fs.writeFile(newPath, data, function(err) {
-            res.send(200, url);
-        });
-    });
+    var stream = cloudinary.uploader.upload_stream(function(result) {
+        res.send(result.url);
+    }, { public_id: req.body.title });
+    fs.createReadStream(req.files.file.path).pipe(stream);
 
 };
 
@@ -27,9 +22,9 @@ exports.index = function(req, res) {
 
     var query = null;
     if (req.query.count === 'true') {
-        query = Actuality.count({published : true});
+        query = Actuality.count({ published: true });
     } else {
-        query = Actuality.find({published : true});
+        query = Actuality.find({ published: true });
     }
     if (req.query.limit) {
         query.limit(req.query.limit);
