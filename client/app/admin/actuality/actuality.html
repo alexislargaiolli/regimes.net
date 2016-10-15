@@ -56,13 +56,11 @@
                 </md-input-container>
                 <label>En bref</label>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <textarea ng-model="selectedActuality.abstract" ui-tinymce rows="3" md-select-on-focus></textarea>
+                    <textarea ng-model="selectedActuality.abstract" ui-tinymce rows="3" aria-label="Asbtract"></textarea>
                 </md-input-container>
+                <label>Contenu</label>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <label>
-                        Contenu
-                    </label>
-                    <textarea ng-model="selectedActuality.content" ui-tinymce rows="5" md-select-on-focus></textarea>
+                    <textarea ng-model="selectedActuality.content" ui-tinymce rows="5" aria-label="Content"></textarea>
                 </md-input-container>
                 <div flex layout="row">
                     <div flex="70" layout="column" layout-align="center center">
