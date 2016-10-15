@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: mainTemplate', function () {
+/*describe('Directive: mainTemplate', function () {
 
   // load the directive's module and view
   beforeEach(module('regimesApp'));
@@ -19,4 +19,4 @@ describe('Directive: mainTemplate', function () {
     //expect(element.text()).toBe('this is the mainTemplate directive');
     expect(1).toBe(1);
   }));
-});
+});*/

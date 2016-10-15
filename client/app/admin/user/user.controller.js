@@ -71,7 +71,7 @@ angular.module('regimesApp')
 
         $scope.showAddForm = function(ev) {
             $mdDialog.show({
-                    controller: CreateUserController,
+                    controller: ('CreateUserController', ['$scope', '$mdDialog', 'User', CreateUserController]),
                     templateUrl: 'app/admin/user/user.create.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,

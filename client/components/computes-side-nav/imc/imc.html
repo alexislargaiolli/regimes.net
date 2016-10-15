@@ -3,7 +3,7 @@
         <md-button flex class="md-primary md-raised" ng-click="imcCtrl.setActive()">Calculer mon IMC</md-button>
         <p class="description">L'indice de masse corporelle (IMC) est une grandeur qui permet d'estimer la corpulence d'une personne.</p>
     </div>
-    <form name="imc" ng-if="imcCtrl.active" layout="column" ng-submit="imcCtrl.compute(form)" novalidate>
+    <form name="imc" ng-if="imcCtrl.active" layout="column" ng-submit="imcCtrl.compute(imc)" novalidate>
         <md-input-container class="md-block">
             <label>Votre taille (en cm)</label>
             <input type="number" min="1" ng-model="imcCtrl.size" required>

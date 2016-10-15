@@ -66,7 +66,7 @@ angular.module('regimesApp')
 
         $scope.showAddForm = function(ev) {
             $mdDialog.show({
-                    controller: CreateDietController,
+                    controller: ('CreateDietController', ['$scope', '$mdDialog', 'Diet', CreateDietController]),
                     templateUrl: 'app/admin/diet/diet.create.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
