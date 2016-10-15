@@ -33,7 +33,7 @@ angular.module('regimesApp', [
       .iconSet('avatar', '../assets/iconsets/avatar-icons.svg', 128);
   })
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
-    tinyMCE.baseURL = '/assets/tinymce'; // jshint ignore:line
+    tinyMCE.baseURL = '/assets/others/tinymce'; // jshint ignore:line
     $urlRouterProvider
       .otherwise('/');
 
