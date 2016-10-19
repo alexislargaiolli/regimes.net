@@ -4,13 +4,50 @@ var _ = require('lodash');
 
 var Diet = require('./diet.model');
 
+function defined(elt) {
+    return elt != null && elt != undefined;
+}
+
+function notEmpty(elt) {
+    return defined(elt) && elt.length > 0;
+}
+
+var validateSubmitedDiet = function(diet, next) {
+    if (defined(diet.author) && notEmpty(diet.author.lastname) && notEmpty(diet.author.firstname) && notEmpty(diet.author.email)) {    
+        console.log(diet.author);
+        next(null, diet);
+    } else {
+        next('Erreur de validation de l\'auteur', null);
+    }
+}
+exports.validateSubmitedDiet = validateSubmitedDiet;
+
+var submitProcess = function(diet, next) {
+    validateSubmitedDiet(diet, function(err, diet){
+        if(err){
+            return next(err, null);
+        }
+        Diet.create(diet, next);
+    })
+}
+
+exports.submitProcess = submitProcess;
+
+exports.submit = function(req, res) {
+    submitProcess(req.body, function(err, diet) {
+        if (err) {
+            return handleError(res, err);
+        }
+        res.send(200);
+    });
+}
 
 // Get list of diets
 exports.index = function(req, res) {
-    
+
     var type = req.query.dietType;
-    var selector = {published : true};
-    if(type){
+    var selector = { published: true };
+    if (type) {
         selector.dietType = type;
     }
     var query = null;
@@ -34,7 +71,7 @@ exports.index = function(req, res) {
         }
         return res.status(200).json(diets);
     });
-    
+
 };
 
 
@@ -45,7 +82,7 @@ exports.paginate = function(req, res) {
         queryFind.limit(req.query.limit);
     }
     if (req.query.page) {
-        var skip = (req.query.page - 1) * req.query.limit;        
+        var skip = (req.query.page - 1) * req.query.limit;
         queryFind.skip(skip);
     }
     if (req.query.order) {
@@ -128,4 +165,3 @@ exports.destroy = function(req, res) {
 function handleError(res, err) {
     return res.status(500).send(err);
 }
-

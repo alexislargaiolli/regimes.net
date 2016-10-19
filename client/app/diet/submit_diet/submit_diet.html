@@ -1,8 +1,57 @@
-<two-column-template template-title="This is the submit_diet view.">
-    <left-column>
-        This is the submit_diet view.
-    </left-column>
-    <right-column>
-        This is the submit_diet view.
-    </right-column>
-</two-column-template>
+<main-template template-title="Proposer un régime">
+    <md-card class="content-wrapper" flex="80">
+        <md-card-content layout="column">        	
+            <form name="form" flex="100" ng-submit="submitDietCtrl.submitDiet(form)" novalidate ng-if="!submitDietCtrl.submission.success === true">
+                <md-card-title-text>
+                    <span class="md-headline">Qui êtes-vous ?</span>
+                </md-card-title-text>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Nom</label>
+                    <input ng-model="submitDietCtrl.diet.author.lastname" type="text" required="true">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Prénom</label>
+                    <input ng-model="submitDietCtrl.diet.author.firstname" type="text" required="true">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Adresse email</label>
+                    <input ng-model="submitDietCtrl.diet.author.email" type="email" required="true">
+                </md-input-container>
+                <md-card-title-text>
+                    <span class="md-headline">Votre régime</span>
+                </md-card-title-text>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Nom de votre régime</label>
+                    <input ng-model="submitDietCtrl.diet.title" type="text" required="true">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Type de régime</label>
+                    <md-select ng-model="submitDietCtrl.diet.dietType" required>
+                        <md-option ng-repeat="dietType in submitDietCtrl.dietTypes" ng-value="dietType.value">
+                            {{dietType.label}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <label>Décrivez votre régime en bref</label>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <textarea name="abstract" ng-model="submitDietCtrl.diet.abstract" ui-tinymce="submitDietCtrl.tinymceOptions" rows="3" aria-label="Abstract" ></textarea>
+                    <p class="right">{{submitDietCtrl.diet.abstract.length}} / {{submitDietCtrl.maxAbstractLength}}</p>
+                    <p class="errorColor" ng-repeat="error in submitDietCtrl.abstractErrors">{{error}}</p>
+                </md-input-container>
+                <label>Décrivez votre régime en détails</label>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <textarea ng-model="submitDietCtrl.diet.content" ui-tinymce="submitDietCtrl.tinymceOptions" rows="5" aria-label="Content"></textarea>
+                    <p class="right">{{submitDietCtrl.diet.content.length}} / {{submitDietCtrl.maxContentLength}}</p>
+                    <p class="errorColor" ng-repeat="error in submitDietCtrl.maxContentLength">{{error}}</p>
+                </md-input-container>                
+                <md-card-actions layout="row" layout-align="space-around center">
+                    <md-button type="submit" class="md-raised md-primary" aria-label="Sauvegarder">
+                        <md-icon md-svg-icon="content:save"></md-icon>
+                        Soumettre mon régime
+                    </md-button>
+                </md-card-actions>                               
+            </form>            
+            <p class="center">{{submitDietCtrl.submission.message}}</p>
+        </md-card-content>        
+    </md-card>
+</main-template>

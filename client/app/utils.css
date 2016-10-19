@@ -27,6 +27,10 @@
   color:#fff;
 }
 
+.errorColor{
+  color: #DD2C00;
+}
+
 .center{
 	text-align: center;
 }

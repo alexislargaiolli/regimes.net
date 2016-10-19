@@ -5,7 +5,8 @@ angular.module('regimesApp')
 
     var Diet = $resource('/api/diets/:id', {id:'@_id'}, {
         'update': { method:'PUT' },
-        'paginate': {method:'GET', url: '/api/diets/paginate'}
+        'paginate': {method:'GET', url: '/api/diets/paginate'},
+        'submit' : {method: 'POST', url : '/api/diets/submit'}
     });
 
     // Public API here
