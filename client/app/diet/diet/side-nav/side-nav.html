@@ -2,7 +2,7 @@
     <h3>Donnez votre opinion</h3>
     <div class="compute-block" layout-padding>
         <div layout="column">
-            <form id="opinionForm" ng-submit="diet.submitOpinion(opinion)" name="opinion" novalidate>
+            <form id="opinionForm" ng-submit="diet.submitOpinion(opinion)" name="opinion" novalidate ng-if="diet.rated !== true">
                 <p class="description">Que pensez-vous de ce régime ?</p>
                 <md-divider></md-divider>
                 <div>
@@ -15,7 +15,7 @@
                 </div>
                 <div>
                     <label layout-padding>Efficacité</label>
-                    <md-radio-group ng-model="diet.opinion.efficiency" layout="row" layout-align="space-around">
+                    <md-radio-group ng-model="diet.opinion.efficiency" layout="row" layout-align="space-around" required>
                         <md-radio-button value="0">Mauvais</md-radio-button>
                         <md-radio-button value="1">Bon</md-radio-button>
                         <md-radio-button value="2">Très bon</md-radio-button>
@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <label layout-padding>Impact santé</label>
-                    <md-radio-group ng-model="diet.opinion.health" layout="row" layout-align="space-around">
+                    <md-radio-group ng-model="diet.opinion.impact" layout="row" layout-align="space-around" required>
                         <md-radio-button value="0">Mauvais</md-radio-button>
                         <md-radio-button value="1">Bon</md-radio-button>
                         <md-radio-button value="2">Très bon</md-radio-button>
@@ -31,7 +31,7 @@
                 </div>
                 <div>
                     <label layout-padding>Coût</label>
-                    <md-radio-group ng-model="diet.opinion.cost" layout="row" layout-align="space-around">
+                    <md-radio-group ng-model="diet.opinion.cost" layout="row" layout-align="space-around" required>
                         <md-radio-button value="0">Mauvais</md-radio-button>
                         <md-radio-button value="1">Bon</md-radio-button>
                         <md-radio-button value="2">Très bon</md-radio-button>
@@ -41,8 +41,30 @@
                     <label>Veuillez rensigner tous les champs.</label>
                 </div>
                 <md-divider></md-divider>
-                <md-button flex class="md-raised md-primary" type="submit">Afficher les résultats</md-button>
+                <md-button ng-disabled="!opinion.$valid" flex class="md-raised md-primary" type="submit">Afficher les résultats</md-button>
             </form>
+            <div ng-if="diet.rated === true">
+                <label>Adaptabilité</label>
+                <md-slider-container ng-disabled="true">                    
+                    <md-slider flex min="0" max="2" ng-model="diet.average.adaptability" aria-label="Adaptabilité" ng-readonly="readonly">
+                    </md-slider>
+                </md-slider-container>
+                <label>Efficacité</label>
+                <md-slider-container ng-disabled="true">                    
+                    <md-slider flex min="0" max="2" ng-model="diet.average.efficiency" aria-label="Efficacité" ng-readonly="readonly">
+                    </md-slider>
+                </md-slider-container>
+                <label>Impact santé</label>
+                <md-slider-container ng-disabled="true">                    
+                    <md-slider flex min="0" max="2" ng-model="diet.average.impact" aria-label="Impact santé" ng-readonly="readonly">
+                    </md-slider>
+                </md-slider-container>
+                <label>Coût</label>
+                <md-slider-container ng-disabled="true">                    
+                    <md-slider flex min="0" max="2" ng-model="diet.average.cost" aria-label="Coût" ng-readonly="readonly">
+                    </md-slider>
+                </md-slider-container>
+            </div>
         </div>
     </div>
 </div>

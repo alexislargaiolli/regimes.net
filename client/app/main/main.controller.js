@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('MainCtrl', function($sce, Actuality) {
+    .controller('MainCtrl', function(Actuality, Video) {
         var self = this;
         this.lastNews = null;
         function activate(){
@@ -10,16 +10,11 @@ angular.module('regimesApp')
                     self.lastNews = actualities[0];
                 }
             });
+            Video.query({active : true}, function(videos){
+                if(videos.length > 0){
+                    self.video = videos[0];
+                }
+            });
         }
         activate();
-
-        this.video =   {
-            title: 'Diététique et nutrition : des métiers d\'avenir !',            
-            url: 'https://www.youtube.com/embed/Rut2zFWoo3Q'
-        };
-
-        this.trustSrc = function(src) {
-            return $sce.trustAsResourceUrl(src);
-        };
-
     });

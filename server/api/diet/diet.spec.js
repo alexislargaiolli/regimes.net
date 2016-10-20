@@ -23,6 +23,22 @@ describe('Diet controller', function() {
         });
     });
 
+    describe('GET /api/addReview', function() {
+
+        it('should respond status 500', function(done) {
+            request(app)
+                .post('/api/diets/addReview/1/1/1/1/1')
+                .expect(500, done)
+        });
+
+        it('should respond status 200', function(done) {
+            request(app)
+                .post('/api/diets/addReview/57f7977ff7130efc245adfc6/1/1/1/1')
+                .expect(200, done)
+        });
+        
+    });
+
     describe('#validateSubmitedDiet', function() {
 
         it('should return error if author is empty', function(done) {
@@ -56,56 +72,56 @@ describe('Diet controller', function() {
 
     describe('#submitProcess', function() {
         var correctDiet = {
-              title : 'test',
-              abstract : 'test',
-              content : 'test',
-              dietType : '0',
-              author : {
-                lastname : 'test',
-                firstname : 'test',
-                email : 'test@test'
-              }
-            };
+            title: 'test',
+            abstract: 'test',
+            content: 'test',
+            dietType: '0',
+            author: {
+                lastname: 'test',
+                firstname: 'test',
+                email: 'test@test'
+            }
+        };
 
-        before(function(done){
-          Diet.remove().exec(function(){
-            done();
-          });
+        before(function(done) {
+            Diet.remove().exec(function() {
+                done();
+            });
         });
 
-        afterEach(function(done){
-          Diet.remove().exec(function(){
-            done();
-          });
+        afterEach(function(done) {
+            Diet.remove().exec(function() {
+                done();
+            });
         });
 
-        it('should begin with no diet', function(done){
-          Diet.find({}).exec(function(err, diets){
-            diets.should.have.length(0);
-            done();
-          });
+        it('should begin with no diet', function(done) {
+            Diet.find({}).exec(function(err, diets) {
+                diets.should.have.length(0);
+                done();
+            });
         });
 
-        it('should return an error if no author is provided', function(done){
-            Controller.submitProcess({}, function(err, diet){
+        it('should return an error if no author is provided', function(done) {
+            Controller.submitProcess({}, function(err, diet) {
                 should.exist(err);
                 done();
             });
         });
 
-        it('should work with a correct diet', function(done){            
-            Controller.submitProcess(correctDiet, function(err, diet){
+        it('should work with a correct diet', function(done) {
+            Controller.submitProcess(correctDiet, function(err, diet) {
                 should.not.exist(err);
                 should.exist(diet);
                 done();
             });
         });
 
-        it('should return a diet unpublished', function(done){
-            Controller.submitProcess(correctDiet, function(err, diet){
+        it('should return a diet unpublished', function(done) {
+            Controller.submitProcess(correctDiet, function(err, diet) {
                 should.not.exist(err);
                 should.exist(diet);
-                diet.published.should.be.false;
+                diet.published.should.be.false; // jshint ignore:line
                 done();
             });
         });

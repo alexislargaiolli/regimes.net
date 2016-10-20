@@ -2,7 +2,7 @@
     <left-column>
         <actuality title="{{main.lastNews.title}}" content="{{main.lastNews.abstract}}" date="{{main.lastNews.date}}" image="{{main.lastNews.image}}" icon="av:library_books">
             <div layout="row" layout-align="end end">
-                <md-button ui-sref="actualities" class="md-primary md-raised big-button no-radius left ml0 mb0" flex="65">                    
+                <md-button ui-sref="actualities" class="md-primary md-raised big-button no-radius left ml0 mb0" flex="65">
                     <span class="btn-txt-icon">+</span>D'actualités
                 </md-button>
                 <md-button ui-sref="actuality({id : main.lastNews._id})" class="md-accent md-raised big-button mr0 mb0" flex="35"><span class="btn-txt-icon">></span>Lire la suite</md-button>
@@ -12,14 +12,14 @@
         <md-card class="content-wrapper">
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-headline">{{main.video.title}}</span>
+                    <span class="md-headline">{{main.video.name}}</span>
                 </md-card-title-text>
                 <md-card-avatar>
                     <md-icon md-svg-icon="av:video_library"></md-icon>
                 </md-card-avatar>
             </md-card-title>
             <md-card-content layout="row" layout-align="space-between">
-                <iframe width="100%" height="400" ng-src="{{main.trustSrc(main.video.url)}}" frameborder="0" allowfullscreen></iframe>
+                <youtube-video player-width="'100%'" player-height="'400px'" video-url="main.video.url"></youtube-video>
             </md-card-content>
         </md-card>
     </left-column>

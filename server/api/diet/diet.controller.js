@@ -5,16 +5,35 @@ var _ = require('lodash');
 var Diet = require('./diet.model');
 
 function defined(elt) {
-    return elt != null && elt != undefined;
+    return elt !== null && elt !== undefined;
 }
 
 function notEmpty(elt) {
     return defined(elt) && elt.length > 0;
 }
 
+exports.addReview = function(req, res) {
+    if (defined(req.params.id) && defined(req.params.adaptability) && defined(req.params.efficiency) && defined(req.params.impact) && defined(req.params.cost)) {
+        Diet.addReview(
+            req.params.id,
+            req.params.adaptability,
+            req.params.efficiency,
+            req.params.impact,
+            req.params.cost,
+            function(err, diet) {
+                if (err) {
+                    return handleError(res, err);
+                }
+                res.status(200).json(diet);
+            }
+        );
+    } else {
+        return handleError(res, 'Missing parameters');
+    }
+}
+
 var validateSubmitedDiet = function(diet, next) {
-    if (defined(diet.author) && notEmpty(diet.author.lastname) && notEmpty(diet.author.firstname) && notEmpty(diet.author.email)) {    
-        console.log(diet.author);
+    if (defined(diet.author) && notEmpty(diet.author.lastname) && notEmpty(diet.author.firstname) && notEmpty(diet.author.email)) {
         next(null, diet);
     } else {
         next('Erreur de validation de l\'auteur', null);
@@ -23,8 +42,8 @@ var validateSubmitedDiet = function(diet, next) {
 exports.validateSubmitedDiet = validateSubmitedDiet;
 
 var submitProcess = function(diet, next) {
-    validateSubmitedDiet(diet, function(err, diet){
-        if(err){
+    validateSubmitedDiet(diet, function(err, diet) {
+        if (err) {
             return next(err, null);
         }
         Diet.create(diet, next);

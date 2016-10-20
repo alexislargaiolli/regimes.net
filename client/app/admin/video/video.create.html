@@ -1,0 +1,32 @@
+<md-dialog aria-label="Nouveau">
+    <form name="createForm" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-icon="navigation:close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Nom</label>
+                    <input ng-model="video.name" type="text" required="true">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>URL</label>
+                    <input ng-model="video.url" type="text" required="true">
+                </md-input-container>
+                <md-switch ng-model="video.active" aria-label="Mettre sur la page d'accueil">
+                    Afficher sur la page d'accueil
+                </md-switch>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button type="submit" ng-click="addVideo()">
+                Ajouter
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -28,10 +28,22 @@
                     Actualités
                 </div>
             </md-list-item>
+            <md-list-item ui-sref="admin.video" ng-if="isAdmin()">
+                <md-icon md-svg-icon="av:library_books" class="md-avatar-icon"></md-icon>
+                <div class="md-list-item-text" flex>
+                    Vidéos
+                </div>
+            </md-list-item>
             <md-list-item ui-sref="admin.diet" ng-if="isAdmin()">
                 <md-icon md-svg-icon="av:library_books" class="md-avatar-icon"></md-icon>
                 <div class="md-list-item-text" flex>
                     Régimes
+                </div>
+            </md-list-item>
+            <md-list-item ui-sref="admin.clinic" ng-if="isAdmin()">
+                <md-icon md-svg-icon="av:library_books" class="md-avatar-icon"></md-icon>
+                <div class="md-list-item-text" flex>
+                    Cliniques
                 </div>
             </md-list-item>
         </md-list>

@@ -1,6 +1,15 @@
 <two-column-template template-title="This is the clinics view.">
     <left-column>
-        This is the clinics view.
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+            <ui-gmap-marker ng-repeat="marker in clinics" idKey="marker._id" coords="marker.coord">
+                <ui-gmap-window show="marker.show" ng-cloak closeClick="!marker.show">
+                    <div>
+                        <p>{{marker.name}}</p>
+                        <p>{{marker.address}}</p>
+                    </div>
+                </ui-gmap-window>
+            </ui-gmap-marker>
+        </ui-gmap-google-map>
     </left-column>
     <right-column>
         This is the clinics view.

@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="app/account/login/login.css">
     <link rel="stylesheet" href="app/account/signup/signup.css">
     <link rel="stylesheet" href="app/admin/admin.css">
+    <link rel="stylesheet" href="app/admin/clinic/clinic.css">
     <link rel="stylesheet" href="app/app.css">
     <link rel="stylesheet" href="app/common/actuality/actualities/actualities.css">
     <link rel="stylesheet" href="app/common/actuality/actuality/actuality.css">
@@ -89,13 +90,18 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
-    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-material-data-table/dist/md-data-table.js"></script>
     <script src="bower_components/tinymce/tinymce.js"></script>
     <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/angular-youtube-mb/src/angular-youtube-embed.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- endbower -->
+    <script src="https://www.youtube.com/iframe_api"></script>
     <!-- endbuild -->
     <!-- build:js({.tmp,client}) app/app.js -->
     <script src="app/app.js"></script>
@@ -109,11 +115,17 @@
     <script src="app/admin/actuality/actuality.resource.js"></script>
     <script src="app/admin/admin.controller.js"></script>
     <script src="app/admin/admin.js"></script>
+    <script src="app/admin/clinic/clinic.controller.js"></script>
+    <script src="app/admin/clinic/clinic.js"></script>
+    <script src="app/admin/clinic/clinic.resource.js"></script>
     <script src="app/admin/diet/diet.controller.js"></script>
     <script src="app/admin/diet/diet.js"></script>
     <script src="app/admin/diet/diet.resource.js"></script>
     <script src="app/admin/user/user.controller.js"></script>
     <script src="app/admin/user/user.js"></script>
+    <script src="app/admin/video/video.controller.js"></script>
+    <script src="app/admin/video/video.js"></script>
+    <script src="app/admin/video/video.resource.js"></script>
     <script src="app/common/actuality/actualities/actualities.controller.js"></script>
     <script src="app/common/actuality/actualities/actualities.js"></script>
     <script src="app/common/actuality/actuality/actuality.controller.js"></script>
@@ -134,6 +146,8 @@
     <script src="app/diet/submit_diet/submit_diet.js"></script>
     <script src="app/directives/actuality/actuality.directive.js"></script>
     <script src="app/directives/main-template/main-template.directive.js"></script>
+    <script src="app/directives/map/map.js"></script>
+    <script src="app/directives/places-autocomplete/places-autocomplete.js"></script>
     <script src="app/directives/two-column-template/two-column-template.directive.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>

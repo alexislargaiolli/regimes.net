@@ -1,0 +1,8 @@
+#mainMap { height: 800px; }
+
+#addClinicMap, #selectedClinicMap{
+	text-align: center;
+	height:400px;
+	width:400px;
+	line-height:400px;
+}

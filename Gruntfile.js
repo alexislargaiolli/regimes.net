@@ -216,7 +216,7 @@ module.exports = function (grunt) {
       target: {
         src: '<%= yeoman.client %>/index.html',
         ignorePath: '<%= yeoman.client %>/',
-        exclude: ['/json3/', '/es5-shim/']
+        exclude: ['/json3/', '/es5-shim/', '/markerclustererplus/', '/js-rich-marker/', '/google-maps-utility-library']        
       }
     },
 
@@ -482,7 +482,6 @@ module.exports = function (grunt) {
                [
                  
                  '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
-                 
                  '!{.tmp,<%= yeoman.client %>}/app/app.js',
                  '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
                  '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js'
