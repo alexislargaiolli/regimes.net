@@ -1,5 +1,5 @@
-<two-column-template template-title="This is the clinics view.">
-    <left-column>
+<main-template template-title="Clinique de la nutrition">
+    <div flex>
         <ui-gmap-google-map center='map.center' zoom='map.zoom'>
             <ui-gmap-marker ng-repeat="marker in clinics" idKey="marker._id" coords="marker.coord">
                 <ui-gmap-window show="marker.show" ng-cloak closeClick="!marker.show">
@@ -10,8 +10,5 @@
                 </ui-gmap-window>
             </ui-gmap-marker>
         </ui-gmap-google-map>
-    </left-column>
-    <right-column>
-        This is the clinics view.
-    </right-column>
-</two-column-template>
+    </div>
+</main-template>
