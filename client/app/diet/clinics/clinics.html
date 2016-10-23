@@ -1,5 +1,13 @@
 <main-template template-title="Clinique de la nutrition">
     <div flex>
+        <md-card class="content-wrapper mb20">
+            <md-card-content layout="row" layout-align="center center">
+                <div flex="20" class="center" hide-xs><img src="assets/icons/icone-liste-3.png" /></div>
+                <div flex>
+                    <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis hic fugiat eveniet vitae repudiandae suscipit sit modi, mollitia neque quos, dolor obcaecati nulla impedit itaque voluptatem iusto, commodi iste provident?</p>
+                </div>
+            </md-card-content>
+        </md-card>
         <ui-gmap-google-map center='map.center' zoom='map.zoom'>
             <ui-gmap-marker ng-repeat="marker in clinics" idKey="marker._id" coords="marker.coord">
                 <ui-gmap-window show="marker.show" ng-cloak closeClick="!marker.show">

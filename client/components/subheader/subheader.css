@@ -25,6 +25,10 @@
 	transition:1s linear all;
 }
 
+.subheader-btn img:not(.small){
+    margin-bottom: -10px;
+}
+
 .subheader-btn img.small-add{
 	width:0px;
 }
