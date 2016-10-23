@@ -31,6 +31,10 @@
   color: #DD2C00;
 }
 
+.justify{
+  text-align: justify;
+}
+
 .center{
 	text-align: center;
 }

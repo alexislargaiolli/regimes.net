@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-  .controller('ShellCtrl', function ($mdSidenav, $scope, $location, Auth) {
+  .controller('ShellCtrl', function ($mdSidenav, $scope, $location, Auth, $state) {
 
     
     $scope.isLoggedIn = Auth.isLoggedIn;
@@ -26,5 +26,6 @@ angular.module('regimesApp')
       originatorEv = ev;
       $mdOpenMenu(ev);
     };
-
+    
+    $scope.currentState = $state.current;
   });

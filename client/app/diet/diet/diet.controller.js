@@ -47,5 +47,5 @@ angular.module('regimesApp')
 
         this.trustUrl = function(url) {
             return $sce.trustAsResourceUrl(url);
-        }
+        };
     });

@@ -11,7 +11,8 @@ angular.module('regimesApp')
                 date: '@',
                 content: '@',
                 image: '@',
-                icon: '@'
+                icon: '@',
+                iconImage : '@'
             }
         };
     });

@@ -3,7 +3,7 @@
         <div ng-include="'components/admin-toolbar/admin-toolbar.html'"></div>
         <div ng-include="'components/admin-side-nav/admin-side-nav.html'"></div>
         <div ng-include="'components/header/header.html'"></div>        
-    </header>
-    <div ng-include="'components/subheader/subheader.html'"></div>  
-    <div id="main-diapo"></div>   
+    </header>    
+    <div ng-include="'components/subheader/subheader.html'"></div>      
+    <div id="main-diapo" ng-class="{home : currentState.name == 'main'}"></div>   
 </div>

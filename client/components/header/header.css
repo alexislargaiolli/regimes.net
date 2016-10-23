@@ -4,3 +4,9 @@ header .header-title{
 	font-weight: 300;
 	margin-top: 65px;
 }
+
+@media (max-width: 599px){
+	#header{
+		margin-bottom:20px;
+	}
+}

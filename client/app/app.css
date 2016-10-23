@@ -31,13 +31,23 @@ body, #viewContainer{
 }
 
 #main-diapo{
-  background: url(/assets/images/diapo.png) no-repeat center center;
+  background: url(/assets/images/diapo.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   width:100%;
   height:300px;  
+}
+
+#main-diapo.home{
+  background: url(/assets/images/diapo-accueil.jpg) no-repeat center center;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width:100%;
+ height:500px;  
 }
 
 button, select, html, textarea, input{
