@@ -2,6 +2,10 @@
  * App-wide Styles
  */
 
+a{
+  text-decoration: none;
+}
+
  .main-shell .profile-container {
    height: 100%;
    font-size: 14px;
@@ -59,6 +63,7 @@ button, select, html, textarea, input{
 
 .subtitle h1{
   margin: 10px 0;
+  font-size:40px;
 }
 
 .big-button{

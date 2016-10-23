@@ -1,5 +1,13 @@
 <two-column-template template-title="{{diets.title}}">
     <left-column>
+        <md-card class="content-wrapper mb20">
+            <md-card-content layout="row" layout-align="center center">
+                <div flex="30">icon</div>
+                <div flex>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis hic fugiat eveniet vitae repudiandae suscipit sit modi, mollitia neque quos, dolor obcaecati nulla impedit itaque voluptatem iusto, commodi iste provident?</p>
+                </div>
+            </md-card-content>
+        </md-card>
         <div ng-repeat="diet in diets.list">
             <actuality title="{{diet.title}}" content="{{diet.abstract}}" date="{{diet.date}}" image="{{diet.image}}">
                 <div class="right">

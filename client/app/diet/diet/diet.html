@@ -11,6 +11,19 @@
                 <div ng-bind-html="diet.current.content"></div>
             </md-card-content>
         </md-card>
+
+        <md-card class="content-wrapper">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Liens utiles</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <ul>
+                    <li class="diet-link" ng-repeat="link in diet.current.links"><a ng-href="http://{{diet.trustUrl(link)}}" target="_blank">{{link}}</a></li>
+                </ul>
+            </md-card-content>
+        </md-card>
     </left-column>
     <right-column>
         <div ng-include="'app/diet/diet/side-nav/side-nav.html'"></div>

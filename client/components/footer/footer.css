@@ -6,3 +6,7 @@ footer, footer a{
 footer a{
 	text-decoration: none;
 }
+
+.dot-separator{
+	margin:0 5px;
+}

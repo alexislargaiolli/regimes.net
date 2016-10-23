@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('DietCtrl', function($scope, $stateParams, Diet, localStorageService) {
+    .controller('DietCtrl', function($scope, $sce, $stateParams, Diet, localStorageService) {
         var self = this;
         this.dietId = $stateParams.id;
         this.current = null;
@@ -44,4 +44,8 @@ angular.module('regimesApp')
                 }, submitSuccess);
             }
         };
+
+        this.trustUrl = function(url) {
+            return $sce.trustAsResourceUrl(url);
+        }
     });

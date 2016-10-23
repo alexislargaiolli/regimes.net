@@ -55,7 +55,11 @@
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Titre</label>
                     <input ng-model="selectedDiet.title" type="text" required="true">
-                </md-input-container>
+                </md-input-container>                
+                <div class="mv20">
+                    <md-chips ng-model="selectedDiet.links" placeholder="Liens utiles (sans http://)" secondary-placeholder="+lien (sans http://)"></md-chips>
+                </div>
+
                 <label>En bref</label>
                 <md-input-container class="md-block" flex-gt-sm>
                     <textarea ng-model="selectedDiet.abstract" ui-tinymce rows="3" aria-label="Abstract"></textarea>
