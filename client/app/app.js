@@ -60,7 +60,7 @@ angular.module('regimesApp', [
             '300': '9575CD',
             '400': '7E57C2',
             '500': '811da7',
-            '600': '5E35B1',
+            '600': '9800d1',
             '700': '512DA8',
             '800': '4527A0',
             '900': '311B92',
@@ -75,21 +75,22 @@ angular.module('regimesApp', [
             ],
             'contrastLightColors': undefined // could also specify this if default was 'dark'
         });
+        //9800d1
         $mdThemingProvider.definePalette('regimeGreen', {
             '50': 'F1F8E9',
             '100': 'DCEDC8',
             '200': 'C5E1A5',
             '300': 'AED581',
             '400': '9CCC65',
-            '500': '4aac09',
-            '600': '7CB342',
+            '500': '71b300',
+            '600': '71b300',
             '700': '689F38',
             '800': '558B2F',
             '900': '33691E',
             'A100': 'CCFF90',
-            'A200': '4aac09',
+            'A200': '71b300',
             'A400': '76FF03',
-            'A700': '64DD17',
+            'A700': '77bc01',
             'contrastDefaultColor': 'light', // whether, by default, text (contrast)
             // on this palette should be dark or light
             'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
