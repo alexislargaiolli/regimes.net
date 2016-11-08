@@ -4,6 +4,7 @@ angular.module('regimesApp')
     .controller('DietsCtrl', function($scope, $stateParams, Diet) {
         var self = this;
         this.list = [];
+        $scope.type = $stateParams.type;
         if ($stateParams.type === 'slimming') {
             this.title = 'Régimes amincissants';
         } else {

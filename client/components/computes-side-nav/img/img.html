@@ -1,7 +1,7 @@
 <div ng-controller="IMGCtrl as imgCtrl" class="compute-block">
     <div class="center" ng-if="imgCtrl.active == false" layout="column">
         <md-button flex class="md-primary md-raised" ng-click="imgCtrl.setActive()">Calculer mon IMG</md-button>
-        <p class="description">L'indice de masse corporelle (IMC) est une grandeur qui permet d'estimer la corpulence d'une personne.</p>
+        <p class="description">L’indice de masse grasse (IMG) est un indice, exprimé en pourcentage, permettant de juger de la proportion de tissus adipeux d’une personne adulte, qui rend compte de la disproportion entre la masse de graisse et celles des muscles.</p>
     </div>
     <form name="imc" ng-if="imgCtrl.active" layout="column" ng-submit="imgCtrl.compute(imc)" novalidate>
         <md-input-container class="md-block">
@@ -24,6 +24,9 @@
             </md-radio-group>
         </md-input-container>
         <p ng-if="imgCtrl.result != null" class="center">Votre IMG est {{imgCtrl.result}} %</p>
+        <p ng-if="imgCtrl.result != null && ((imgCtrl.sexe == 0 && imgCtrl.result < 25) || (imgCtrl.sexe == 1 && imgCtrl.result < 15))" class="center">Trop maigre</p>
+        <p ng-if="imgCtrl.result != null && ((imgCtrl.sexe == 0 && imgCtrl.result >= 25 && imgCtrl.result <= 30) || (imgCtrl.sexe == 1 && imgCtrl.result >= 15 && imgCtrl.result <= 20))" class="center">Pourcentage normal</p>
+        <p ng-if="imgCtrl.result != null && ((imgCtrl.sexe == 0 && imgCtrl.result > 30) || (imgCtrl.sexe == 1 && imgCtrl.result > 20))" class="center">Trop de graisse</p>  
         <md-button flex type="submit" class="md-raised">Calculer</md-button>
     </form>
 </div>

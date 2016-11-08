@@ -29,9 +29,10 @@
                     <textarea ng-model="message.content" md-maxlength="2000" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
                 <div layout="row" layout-align="end center">
-                    <md-button class="md-primary" type="submit">
+                    <md-button class="md-primary" type="submit" ng-if="response.status != 200">
                         Envoyer
                     </md-button>
+                    <p ng-if="response.message != null">{{response.message}}</p>
                 </div>
             </form>
         </md-card-content>

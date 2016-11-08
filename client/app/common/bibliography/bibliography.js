@@ -6,6 +6,6 @@ angular.module('regimesApp')
       .state('bibliography', {
         url: '/bibliography',
         templateUrl: 'app/common/bibliography/bibliography.html',
-        controller: 'BibliographyCtrl'
+        controller: 'BibliographyCtrl as biblioCtrl'
       });
   });

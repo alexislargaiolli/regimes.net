@@ -1,3 +1,19 @@
-<main-template template-title="Bibliographie">
+<two-column-template template-title="Bibliographie">
+    <left-column>
+        <md-list flex>
+            <div  ng-repeat="book in biblioCtrl.books"><md-list-item class="md-3-line" ng-click="null" href="http://{{biblioCtrl.trustUrl(book.link)}}" target="_blank">                
+                <div class="md-list-item-text" layout="column">
+                    <h2>{{ book.title }}</h2>
+                    <h3>{{ book.author }} - {{ book.date | date : 'dd/MM/yyyy' }}</h3>
+                    <p ng-bind-html="book.description"></p>                    
+                </div>
 
-</main-template>
+            </md-list-item>      
+            <md-divider class="mv10"></md-divider>      
+            </div>
+        </md-list>
+    </left-column>
+    <right-column>
+        <div ng-include="'components/computes-side-nav/computes-side-nav.html'"></div>
+    </right-column>
+</two-column-template>

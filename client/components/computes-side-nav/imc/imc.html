@@ -12,7 +12,13 @@
             <label>Votre poids (en kg)</label>
             <input type="number" min="1" ng-model="imcCtrl.weight" required>
         </md-input-container>
-        <p ng-if="imcCtrl.result != null" class="center">Votre IMC est {{imcCtrl.result}} kg/m²</p>
+        <p ng-if="imcCtrl.result != null" class="center">Votre IMC est {{imcCtrl.result}} kg/m²</p>       
+        <p ng-if="imcCtrl.result != null && imcCtrl.result < 16.5" class="center">Anorexie ou dénutrition</p>
+        <p ng-if="imcCtrl.result != null && imcCtrl.result >= 16 && imcCtrl.result < 18.5" class="center">Maigreur</p>
+        <p ng-if="imcCtrl.result != null && imcCtrl.result >= 18.5 && imcCtrl.result < 25" class="center">Corpulence normale</p>
+        <p ng-if="imcCtrl.result != null && imcCtrl.result >= 25 && imcCtrl.result < 30" class="center">Surpoids</p>
+        <p ng-if="imcCtrl.result != null && imcCtrl.result >= 30 && imcCtrl.result < 35" class="center">Obésité modérée (Classe 1)</p>
+        <p ng-if="imcCtrl.result != null && imcCtrl.result >= 35" class="center">Obésité modérée (Classe 2)</p>
         <md-button flex type="submit" class="md-raised">Calculer</md-button>
     </form>
 </div>
