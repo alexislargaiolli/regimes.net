@@ -6,17 +6,7 @@ angular.module('regimesApp')
         this.submission = {};
         this.maxAbstractLength = 500;
         this.maxContentLength = 3000;
-        this.diet = {
-        	author : {
-        		lastname : 'test',
-        		firstname : 'test',
-        		email : 'test@eest'
-        	},
-        	title : 'rets',
-        	abstract : 'test',
-        	content : 'test',
-        	dietType: 1        	
-        };
+        this.diet = {};
         this.dietTypes = [{ value: 0, label: 'Régime amincissant' }, { value: 1, label: 'Régime santé' }];
         this.abstractErrors=[];
         this.contentErrors=[];
