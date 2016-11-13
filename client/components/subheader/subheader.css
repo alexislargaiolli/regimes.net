@@ -40,3 +40,12 @@
 .subheader-btn img.small-remove{
 	width:150px;	
 }
+
+.diet-list-tooltip .md-content{
+	height: auto;
+	background: #811da7;
+}
+.diet-list-tooltip .md-content>div{
+	font-size:15px;
+	font-family: Open Sans;
+}

@@ -1,6 +1,6 @@
 <div ng-controller="IMCCtrl as imcCtrl" class="compute-block">
     <div class="center" ng-if="imcCtrl.active == false" layout="column">
-        <md-button flex class="md-primary md-raised" ng-click="imcCtrl.setActive()">Calculer mon IMC</md-button>
+        <md-button class="md-primary md-raised" ng-click="imcCtrl.setActive()">Calculer mon IMC</md-button>
         <p class="description">L'indice de masse corporelle (IMC) est une grandeur qui permet d'estimer la corpulence d'une personne.</p>
     </div>
     <form name="imc" ng-if="imcCtrl.active" layout="column" ng-submit="imcCtrl.compute(imc)" novalidate>
@@ -19,6 +19,6 @@
         <p ng-if="imcCtrl.result != null && imcCtrl.result >= 25 && imcCtrl.result < 30" class="center">Surpoids</p>
         <p ng-if="imcCtrl.result != null && imcCtrl.result >= 30 && imcCtrl.result < 35" class="center">Obésité modérée (Classe 1)</p>
         <p ng-if="imcCtrl.result != null && imcCtrl.result >= 35" class="center">Obésité modérée (Classe 2)</p>
-        <md-button flex type="submit" class="md-raised">Calculer</md-button>
+        <md-button type="submit" class="md-raised">Calculer</md-button>
     </form>
 </div>

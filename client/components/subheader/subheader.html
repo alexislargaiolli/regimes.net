@@ -1,10 +1,13 @@
 <md-toolbar layout="row" layout-align="center center" ng-controller="SubheaderCtrl">
     <div layout-gt-xs="row" layout="column" flex class="layout-max-width" layout-align="space-around center">
-        <div flex="30" class="center"> 
-            <md-button ui-sref="diets({type : 'slimming'})" class="subheader-btn">
+        <div flex="30" class="center">
+            <md-button id="subheaderSlimmingBtn" ui-sref="diets({type : 'slimming'})" class="subheader-btn">
                 <img src="assets/icons/icone-big-1off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-1on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />
                 <span>Régimes amincissants</span>
+                <md-tooltip md-direction="bottom" class="diet-list-tooltip">
+                    <div ng-repeat="diet in slimmingDiets">{{diet.title}}</div>
+                </md-tooltip>
             </md-button>
         </div>
         <div flex="30" class="center">
@@ -12,6 +15,9 @@
                 <img src="assets/icons/icone-big-2off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-2on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />
                 <span>Régimes santé</span>
+                <md-tooltip md-direction="bottom" class="diet-list-tooltip">
+                    <div ng-repeat="diet in healthDiets">{{diet.title}}</div>
+                </md-tooltip>
             </md-button>
         </div>
         <div flex="30" class="center">
@@ -19,7 +25,7 @@
                 <img src="assets/icons/icone-big-3off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-3on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />
                 <span>Clinique de la nutrition</span>
-            </md-button>            
+            </md-button>
         </div>
     </div>
 </md-toolbar>

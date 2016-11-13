@@ -28,6 +28,7 @@ body, #viewContainer{
 
 #logo{
   cursor: pointer;
+      max-width: 100%;
 }
 
 #main-diapo{

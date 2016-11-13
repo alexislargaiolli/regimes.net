@@ -19,7 +19,7 @@ angular.module('regimesApp')
         activate();
 
         function loadDatas() {
-            $scope.promise = Diet.paginate($scope.query, loadDatasSuccess).$promise;
+            $scope.promise = Diet.resource.paginate($scope.query, loadDatasSuccess).$promise;
         }
 
         function loadDatasSuccess(datas) {
@@ -52,7 +52,7 @@ angular.module('regimesApp')
         };
 
         $scope.saveSelected = function() {
-            Diet.update({}, $scope.selectedDiet, function() {
+            Diet.resource.update({}, $scope.selectedDiet, function() {
                 $scope.selectedDiet = null;
                 $mdToast.show(
                     $mdToast.simple()
@@ -61,6 +61,7 @@ angular.module('regimesApp')
                     .toastClass('success-toast')
                     .hideDelay(3000)
                 );
+                Diet.load();
             });
         };
 
@@ -75,6 +76,7 @@ angular.module('regimesApp')
                 .then(function(diet) {
                     diet.$save(function() {
                         $scope.loadDatas();
+                        Diet.load();
                     });
                 }, function() {});
         };
@@ -98,6 +100,7 @@ angular.module('regimesApp')
                         .toastClass('success-toast')
                         .hideDelay(3000)
                     );
+                    Diet.load();
                 }
 
                 function error() {
@@ -109,7 +112,7 @@ angular.module('regimesApp')
                         .hideDelay(3000)
                     );
                 }
-                Diet.delete({}, eltToDelete, success, error);
+                Diet.resource.delete({}, eltToDelete, success, error);
             }
 
             $mdDialog.show(confirm).then(function() {
@@ -163,7 +166,7 @@ angular.module('regimesApp')
             $scope.dietTypes = [{ value: 0, label: 'Régime amincissant' }, { value: 1, label: 'Régime santé' }];
 
             function activate() {
-                $scope.diet = new Diet();
+                $scope.diet = new Diet.resource();
                 $scope.diet.date = new Date();
                 $scope.diet.published = false;
             }
