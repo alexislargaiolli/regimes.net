@@ -10,6 +10,10 @@ angular.module('regimesApp')
             limit: 5,
             page: 1
         };
+        $scope.maxAbstractLength = 1000;
+        $scope.maxContentLength = 100000;
+        $scope.abstractErrors = [];
+        $scope.contentErrors = [];
         $scope.dietTypes = [{ value: 0, label: 'Régime amincissant' }, { value: 1, label: 'Régime santé' }];
 
         function activate() {
@@ -52,17 +56,35 @@ angular.module('regimesApp')
         };
 
         $scope.saveSelected = function() {
-            Diet.resource.update({}, $scope.selectedDiet, function() {
-                $scope.selectedDiet = null;
-                $mdToast.show(
-                    $mdToast.simple()
-                    .textContent('Sauvegarde réussie.')
-                    .position('bottom right')
-                    .toastClass('success-toast')
-                    .hideDelay(3000)
-                );
-                Diet.load();
-            });
+            if ($scope.selectedDiet.abstract.length === 0) {
+                $scope.abstractErrors.push('Vous n\'avez pas détaillé brièvement votre régime.');
+            } else if ($scope.selectedDiet.abstract.length > $scope.maxAbstractLength) {
+                $scope.abstractErrors.push('La taille de ce champ ne doit pas dépasser ' + $scope.maxAbstractLength);
+            } else if ($scope.selectedDiet.content.length === 0) {
+                $scope.contentErrors.push('Vous n\'avez pas détaillé votre régime.');
+            } else if ($scope.selectedDiet.content.length > $scope.maxContentLength) {
+                $scope.contentErrors.push('La taille de ce champ ne doit pas dépasser ' + $scope.maxContentLength);
+            } else {
+                Diet.resource.update({}, $scope.selectedDiet, function() {
+                    $scope.selectedDiet = null;
+                    $mdToast.show(
+                        $mdToast.simple()
+                        .textContent('Sauvegarde réussie.')
+                        .position('bottom right')
+                        .toastClass('success-toast')
+                        .hideDelay(3000)
+                    );
+                    Diet.load();
+                }, function() {
+                    $mdToast.show(
+                        $mdToast.simple()
+                        .textContent('Erreur lors de la sauvegarde...')
+                        .position('bottom right')
+                        .toastClass('error-toast')
+                        .hideDelay(3000)
+                    );
+                });
+            }
         };
 
         $scope.showAddForm = function(ev) {

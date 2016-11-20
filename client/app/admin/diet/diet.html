@@ -55,18 +55,21 @@
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Titre</label>
                     <input ng-model="selectedDiet.title" type="text" required="true">
-                </md-input-container>                
+                </md-input-container>
                 <div class="mv20">
                     <md-chips ng-model="selectedDiet.links" placeholder="Liens utiles (sans http://)" secondary-placeholder="+lien (sans http://)"></md-chips>
                 </div>
-
                 <label>En bref</label>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <textarea ng-model="selectedDiet.abstract" ui-tinymce rows="3" aria-label="Abstract"></textarea>
+                    <textarea name="abstract" ng-model="selectedDiet.abstract" ui-tinymce rows="3" aria-label="Abstract"></textarea>
+                    <p class="right">{{selectedDiet.abstract.length}} / {{maxAbstractLength}}</p>
+                    <p class="errorColor" ng-repeat="error in abstractErrors">{{error}}</p>
                 </md-input-container>
                 <label>Contenu</label>
                 <md-input-container class="md-block" flex-gt-sm>
                     <textarea ng-model="selectedDiet.content" ui-tinymce rows="5" aria-label="Content"></textarea>
+                    <p class="right">{{selectedDiet.content.length}} / {{maxContentLength}}</p>
+                    <p class="errorColor" ng-repeat="error in contentErrors">{{error}}</p>
                 </md-input-container>
                 <div flex layout="row">
                     <div flex="70" layout="column" layout-align="center center">

@@ -4,8 +4,8 @@ angular.module('regimesApp')
     .controller('SubmitDietCtrl', function($scope, Diet) {
         var self = this;
         this.submission = {};
-        this.maxAbstractLength = 500;
-        this.maxContentLength = 3000;
+        this.maxAbstractLength = 1000;
+        this.maxContentLength = 100000;
         this.diet = {};
         this.dietTypes = [{ value: 0, label: 'Régime amincissant' }, { value: 1, label: 'Régime santé' }];
         this.abstractErrors=[];

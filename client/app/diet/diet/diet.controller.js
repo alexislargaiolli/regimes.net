@@ -20,7 +20,7 @@ angular.module('regimesApp')
 
         function activate() {
             self.rated = localStorageService.get($stateParams.id);
-            Diet.get({ id: $stateParams.id }, function(diet) {
+            Diet.resource.get({ id: $stateParams.id }, function(diet) {
                 self.current = diet;
                 updateAverage(diet);
             });

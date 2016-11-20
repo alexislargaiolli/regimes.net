@@ -42,7 +42,7 @@
                 <md-input-container class="md-block" flex-gt-sm>
                     <textarea ng-model="submitDietCtrl.diet.content" ui-tinymce="submitDietCtrl.tinymceOptions" rows="5" aria-label="Content"></textarea>
                     <p class="right">{{submitDietCtrl.diet.content.length}} / {{submitDietCtrl.maxContentLength}}</p>
-                    <p class="errorColor" ng-repeat="error in submitDietCtrl.maxContentLength">{{error}}</p>
+                    <p class="errorColor" ng-repeat="error in submitDietCtrl.contentErrors">{{error}}</p>
                 </md-input-container>                
                 <md-card-actions layout="row" layout-align="space-around center">
                     <md-button type="submit" class="md-raised md-primary" aria-label="Sauvegarder">
