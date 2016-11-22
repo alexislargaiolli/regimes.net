@@ -22,7 +22,6 @@
 	width:120px;
 	display: block;
 	margin:0 auto;
-	transition:1s linear all;
 }
 
 .subheader-btn img:not(.small){
