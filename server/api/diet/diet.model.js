@@ -15,12 +15,12 @@ var DietSchema = new Schema({
     abstract: {
         type: String,
         minlength: 1,
-        maxlength: 500
+        maxlength: 1000
     },
     content: {
         type: String,
         minlength: 1,
-        maxlength: 3000
+        maxlength: 100000
     },
     image: String,
     author: {
