@@ -1,24 +1,24 @@
 <md-toolbar layout="row" layout-align="center center" ng-controller="SubheaderCtrl">
     <div layout-gt-xs="row" layout="column" flex class="layout-max-width" layout-align="space-around center">
         <div flex="30" class="center">
-            <md-button id="subheaderSlimmingBtn" ui-sref="diets({type : 'slimming'})" class="subheader-btn">
+            <md-button id="subheaderSlimmingBtn" ng-mouseenter="showMenu('#submenuSlimmingDiet')" ui-sref="diets({type : 'slimming'})" class="subheader-btn">
                 <img src="assets/icons/icone-big-1off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-1on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />
                 <span>Régimes amincissants</span>
-                <md-tooltip md-direction="bottom" class="diet-list-tooltip">
-                    <div ng-repeat="diet in slimmingDiets">{{diet.title}}</div>
-                </md-tooltip>
             </md-button>
+            <div id="submenuSlimmingDiet" class="submenu md-whiteframe-1dp" ng-mouseleave="hideMenu('#submenuSlimmingDiet')">
+                <a class="submenu-item" ng-click="onLinkClicked(diet._id)" ng-repeat="diet in slimmingDiets">{{diet.title}}</a>
+            </div>
         </div>
         <div flex="30" class="center">
-            <md-button ui-sref="diets({type : 'health'})" class="subheader-btn">
+            <md-button ui-sref="diets({type : 'health'})" ng-mouseenter="showMenu('#submenuHealthDiet')" class="subheader-btn">
                 <img src="assets/icons/icone-big-2off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-2on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />
                 <span>Régimes santé</span>
-                <md-tooltip md-direction="bottom" class="diet-list-tooltip">
-                    <div ng-repeat="diet in healthDiets">{{diet.title}}</div>
-                </md-tooltip>
             </md-button>
+            <div id="submenuHealthDiet" class="submenu md-whiteframe-1dp" ng-mouseleave="hideMenu('#submenuHealthDiet')">
+                <a class="submenu-item" ng-click="onLinkClicked(diet._id)" ng-repeat="diet in healthDiets">{{diet.title}}</a>
+            </div>
         </div>
         <div flex="30" class="center">
             <md-button ui-sref="clinics" class="subheader-btn">

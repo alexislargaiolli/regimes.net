@@ -1,3 +1,8 @@
+.subheader-btn{
+	overflow: visible;
+	width: 100%;
+}
+
 .subheader-btn img{
 	margin:10px;
 }
@@ -40,11 +45,26 @@
 	width:150px;	
 }
 
-.diet-list-tooltip .md-content{
-	height: auto;
+.submenu{
+	position: absolute;
 	background: #811da7;
+	opacity: 0;
+	margin-left:6px;
 }
-.diet-list-tooltip .md-content>div{
-	font-size:15px;
+
+.submenu-item{
+	padding: 10px 20px;
+	min-width: 300px;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
 	font-family: Open Sans;
+}
+
+.submenu-item:hover{
+	background-color: rgba(158, 158, 158, 0.2);
+}
+
+.submenu.visible{
+	opacity: 1;
 }
