@@ -35,7 +35,7 @@ angular.module('regimesApp')
 
         this.submitOpinion = function(form) {
             if (form.$valid) {
-                Diet.addReview({
+                Diet.resource.addReview({
                     id: self.current._id,
                     adaptability: self.opinion.adaptability,
                     efficiency: self.opinion.efficiency,

@@ -154,11 +154,13 @@ exports.update = function(req, res) {
             return res.status(404).send('Not Found');
         }
         var updated = _.merge(diet, req.body);
+        updated.links = [];
+        updated.links = req.body.links;
         updated.save(function(err) {
             if (err) {
                 return handleError(res, err);
             }
-            return res.status(200).json(diet);
+            return res.status(200).json(updated);
         });
     });
 };
@@ -182,5 +184,6 @@ exports.destroy = function(req, res) {
 };
 
 function handleError(res, err) {
+    console.log(err);
     return res.status(500).send(err);
 }

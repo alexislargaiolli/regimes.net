@@ -50,11 +50,11 @@
 	background: #811da7;
 	opacity: 0;
 	margin-left:6px;
+	overflow-y: scroll;
 }
 
 .submenu-item{
 	padding: 10px 20px;
-	min-width: 300px;
 	cursor: pointer;
 	display: block;
 	font-size: 14px;
@@ -67,4 +67,13 @@
 
 .submenu.visible{
 	opacity: 1;
+}
+
+.submenu::-webkit-scrollbar {
+    width: 0.3em;
+}
+
+.submenu::-webkit-scrollbar-thumb {
+  background-color: #777;
+  outline: 1px solid slategrey;
 }

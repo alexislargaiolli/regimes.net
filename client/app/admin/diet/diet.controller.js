@@ -47,8 +47,10 @@ angular.module('regimesApp')
         };
 
         $scope.select = function(diet) {
-            $scope.selectedDiet = diet;
-            $scope.selectedDiet.date = new Date(diet.date);
+            Diet.resource.get({ id: diet._id }, function(diet) {
+                $scope.selectedDiet = diet;
+                $scope.selectedDiet.date = new Date(diet.date); 
+            });            
         };
 
         $scope.clearSelection = function() {
@@ -56,11 +58,11 @@ angular.module('regimesApp')
         };
 
         $scope.saveSelected = function() {
-            if ($scope.selectedDiet.abstract.length === 0) {
+            if ($scope.selectedDiet.abstract === undefined || $scope.selectedDiet.abstract.length === 0) {
                 $scope.abstractErrors.push('Vous n\'avez pas détaillé brièvement votre régime.');
             } else if ($scope.selectedDiet.abstract.length > $scope.maxAbstractLength) {
                 $scope.abstractErrors.push('La taille de ce champ ne doit pas dépasser ' + $scope.maxAbstractLength);
-            } else if ($scope.selectedDiet.content.length === 0) {
+            } else if ($scope.selectedDiet.content === undefined || $scope.selectedDiet.content.length === 0) {
                 $scope.contentErrors.push('Vous n\'avez pas détaillé votre régime.');
             } else if ($scope.selectedDiet.content.length > $scope.maxContentLength) {
                 $scope.contentErrors.push('La taille de ce champ ne doit pas dépasser ' + $scope.maxContentLength);

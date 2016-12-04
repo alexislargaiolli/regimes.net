@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('SubheaderCtrl', function($rootScope, $window, $scope, $state, Diet) {
+    .controller('SubheaderCtrl', function($rootScope, $window, $scope, $state, Diet, $mdMedia) {
         $scope.currentState = $state.current;
 
         $scope.healthDiets = [];
@@ -20,22 +20,30 @@ angular.module('regimesApp')
         }
 
         $scope.showMenu = function(id) {
-            angular.element(document.querySelector('#submenuSlimmingDiet')).removeClass('visible');
-            angular.element(document.querySelector('#submenuHealthDiet')).removeClass('visible');
-            var menu = angular.element(document.querySelector(id));
-            menu.addClass('visible');
+            if ($mdMedia('gt-xs')) {
+                angular.element(document.querySelector('#submenuSlimmingDiet')).removeClass('visible');
+                angular.element(document.querySelector('#submenuHealthDiet')).removeClass('visible');
+                var menu = angular.element(document.querySelector(id));
+                menu.addClass('visible');
+            }
         }
 
         $scope.hideMenu = function(id) {
-            var menu = angular.element(document.querySelector(id));
-            menu.removeClass('visible');
+            if ($mdMedia('gt-xs')) {
+                var menu = angular.element(document.querySelector(id));
+                menu.removeClass('visible');
+            }
         }
 
         function updateSubMenus() {
-            console.log('updateSubMenus');
             var width = document.querySelector('#subheaderSlimmingBtn').clientWidth;
-            angular.element(document.querySelector('#submenuSlimmingDiet')).css('width', width + 'px');
-            angular.element(document.querySelector('#submenuHealthDiet')).css('width', width + 'px');
+            var height = document.querySelector('#main-diapo').clientHeight - 20;            
+            var submenuSlimming = angular.element(document.querySelector('#submenuSlimmingDiet'));
+            submenuSlimming.css('width', width + 'px');
+            submenuSlimming.css('max-height', height + 'px');
+            var submenuHealth = angular.element(document.querySelector('#submenuHealthDiet'))
+            submenuHealth.css('width', width + 'px');
+            submenuHealth.css('max-height', height + 'px');
         }
 
         angular.element($window).bind('resize', function() {

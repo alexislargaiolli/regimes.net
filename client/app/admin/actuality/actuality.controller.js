@@ -42,8 +42,11 @@ angular.module('regimesApp')
         };
 
         $scope.select = function(actuality) {
-            $scope.selectedActuality = actuality;
-            $scope.selectedActuality.date = new Date(actuality.date);
+            Actuality.get({id : actuality._id}, function(actuality){
+                $scope.selectedActuality = actuality;
+                $scope.selectedActuality.date = new Date(actuality.date);
+            });
+            
         };
 
         $scope.clearSelection = function() {

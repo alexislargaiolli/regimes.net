@@ -46,8 +46,7 @@ angular.module('regimesApp')
 					self.contentErrors.push('La taille de ce champ ne doit pas dépasser ' + self.maxContentLength);
         		}
         		else{
-        			console.log('submoi');
-        			Diet.submit(self.diet, success, error);
+        			Diet.resource.submit(self.diet, success, error);
         		}
         	}
         };        
