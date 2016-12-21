@@ -7,13 +7,12 @@
                     <img ng-if="type == 'health'" src="assets/icons/icone-liste-2.png" />
                 </div>
                 <div flex>
-                    <p class="justify" ng-if="type == 'slimming'">Un régime alimentaire amincissant est une pratique alimentaire destiné à perdre du poids. Le plus souvent, les régimes se basent sur une diminution de la quantité d'énergie ingérée en contrôlant les principales familles d'apports alimentaires (calories) et en nutriments (protéines, lipides, glucides).</p>
-                    <p class="justify" ng-if="type == 'health'">L’organisme a besoin d’un apport d’énergie (mesuré en calories) suffisant mais pas excessif, variable selon la taille, le poids, l’âge et l’activité de chaque personne. Certaines pathologies demande une attention plus particulière sur son alimentation. </p>
+                    <div ng-bind-html="summary"></div>
                 </div>
             </md-card-content>
         </md-card>
         <div ng-repeat="diet in diets.list">
-            <actuality title="{{diet.title}}" content="{{diet.abstract}}" date="{{diet.date}}" image="{{diet.image}}" icon-image="assets/icons/icone-small-apple-40.png">
+            <actuality title="{{diet.title}}" content="{{diet.abstract}}" date="{{diet.date}}" image="{{diet.image}}" icon-image="{{type == 'slimming' ? 'assets/icons/icone-small-1-40.png' : 'assets/icons/icone-small-apple-40.png'}}">
                 <div class="right">
                     <md-button ui-sref="diet({id : diet._id})" class="md-accent md-raised big-button mr0 mb0"><span class="btn-txt-icon">></span>En savoir plus</md-button>
                 </div>

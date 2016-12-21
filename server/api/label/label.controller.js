@@ -2,17 +2,18 @@
 
 var _ = require('lodash');
 
-var Video = require('./video.model');
+var Label = require('./label.model');
 
 
-// Get list of videos
+// Get list of labels
 exports.index = function(req, res) {
-    console.log(req.query);
+    
+    
     var query = null;
     if (req.query.count === 'true') {
-        query = Video.count();
+        query = Label.count();
     } else {
-        query = Video.find();
+        query = Label.find();
     }
     if (req.query.limit) {
         query.limit(req.query.limit);
@@ -23,22 +24,22 @@ exports.index = function(req, res) {
     if (req.query.sort) {
         query.sort(req.query.sort);
     }
-    if(req.query.active){
-        query.where({active : req.query.active});
+    if (req.query.key) {
+        query.where({key : req.query.key});
     }
-    query.exec(function(err, videos) {
+    query.exec(function(err, labels) {
         if (err) {
             return handleError(res, err);
         }
-        return res.status(200).json(videos);
+        return res.status(200).json(labels);
     });
     
 };
 
 
 exports.paginate = function(req, res) {
-    var queryFind = Video.find();
-    var queryCount = Video.count();
+    var queryFind = Label.find();
+    var queryCount = Label.count();
     if (req.query.limit) {
         queryFind.limit(req.query.limit);
     }
@@ -53,68 +54,68 @@ exports.paginate = function(req, res) {
         if (err) {
             return handleError(res, err);
         }
-        queryFind.exec(function(err, videos) {
+        queryFind.exec(function(err, labels) {
             if (err) {
                 return handleError(res, err);
             }
-            return res.status(200).json({ count: count, datas: videos });
+            return res.status(200).json({ count: count, datas: labels });
         });
     });
 };
 
-// Get a single video
+// Get a single label
 exports.show = function(req, res) {
-    Video.findById(req.params.id, function(err, video) {
+    Label.findById(req.params.id, function(err, label) {
         if (err) {
             return handleError(res, err);
         }
-        if (!video) {
+        if (!label) {
             return res.status(404).send('Not Found');
         }
-        return res.json(video);
+        return res.json(label);
     });
 };
 
-// Creates a new video in the DB.
+// Creates a new label in the DB.
 exports.create = function(req, res) {
-    Video.create(req.body, function(err, video) {
+    Label.create(req.body, function(err, label) {
         if (err) {
             return handleError(res, err);
         }
-        return res.status(201).json(video);
+        return res.status(201).json(label);
     });
 };
 
-// Updates an existing video in the DB.
+// Updates an existing label in the DB.
 exports.update = function(req, res) {
     if (req.body._id) { delete req.body._id; }
-    Video.findById(req.params.id, function(err, video) {
+    Label.findById(req.params.id, function(err, label) {
         if (err) {
             return handleError(res, err);
         }
-        if (!video) {
+        if (!label) {
             return res.status(404).send('Not Found');
-        }        
-        var updated = _.merge(video, req.body);
+        }
+        var updated = _.merge(label, req.body);
         updated.save(function(err) {
             if (err) {
                 return handleError(res, err);
             }
-            return res.status(200).json(video);
+            return res.status(200).json(label);
         });
     });
 };
 
-// Deletes a video from the DB.
+// Deletes a label from the DB.
 exports.destroy = function(req, res) {
-    Video.findById(req.params.id, function(err, video) {
+    Label.findById(req.params.id, function(err, label) {
         if (err) {
             return handleError(res, err);
         }
-        if (!video) {
+        if (!label) {
             return res.status(404).send('Not Found');
         }
-        video.remove(function(err) {
+        label.remove(function(err) {
             if (err) {
                 return handleError(res, err);
             }

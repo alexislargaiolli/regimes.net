@@ -41,6 +41,12 @@
                     Bibliographie
                 </div>
             </md-list-item>
+            <md-list-item ui-sref="admin.label" ng-if="isAdmin()">
+                <md-icon md-svg-icon="av:library_books" class="md-avatar-icon"></md-icon>
+                <div class="md-list-item-text" flex>
+                    Labels
+                </div>
+            </md-list-item>
         </md-list>
     </md-content>
     </md-content>

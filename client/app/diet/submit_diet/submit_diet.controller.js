@@ -20,7 +20,7 @@ angular.module('regimesApp')
         var success = function(data){
         	console.log('success ' + data);
         	self.submission.success = true;
-        	self.submission.message = 'Votre régime a bien été soumis. Il maintenant en attente de validation.';
+        	self.submission.message = 'Votre régime a bien été soumis. Il est maintenant en attente de validation.';
         };
 
         var error = function(err){

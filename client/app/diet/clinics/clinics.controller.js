@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('regimesApp')
-    .controller('ClinicsCtrl', function($scope, uiGmapGoogleMapApi, Clinic) {
+    .controller('ClinicsCtrl', function($scope, uiGmapGoogleMapApi, Clinic, Label) {
         $scope.map = { center: { latitude: 46.52863469527167, longitude: 2.43896484375 }, zoom: 6 };
         $scope.markers = [{
             coord: {
@@ -22,11 +22,14 @@ angular.module('regimesApp')
         }];
         uiGmapGoogleMapApi.then(function() {
 
-        });
-
+        });        
+        $scope.summary = "";
         function activate(){
             Clinic.query({}, function(clinics){
                 $scope.clinics = clinics;
+            });
+            Label.query({key : 'clinics.summary'}, function(label){
+                $scope.summary = label[0].value;
             });
         }
         activate();
