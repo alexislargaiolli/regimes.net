@@ -1,5 +1,5 @@
 <div layout="row">
-    <md-card flex ng-show="showList()">        
+    <md-card flex ng-show="showList()">
         <md-card-content>
             <md-toolbar class="md-menu-toolbar">
                 <div class="md-toolbar-tools">
@@ -24,15 +24,15 @@
             <md-table-container>
                 <table md-table multiple md-row-select ng-model="selected" md-progress="promise">
                     <thead md-head md-order="query.order" md-on-reorder="loadDatas">
-                        <tr md-row>                                                    
-                            <th md-column md-order-by="name"><span>Nom</span></th>                        
+                        <tr md-row>
+                            <th md-column md-order-by="name"><span>Nom</span></th>
                             <th md-column md-order-by="email"><span>Email</span></th>
                             <th md-column md-order-by="role"><span>Rôle</span></th>
                         </tr>
                     </thead>
                     <tbody md-body>
                         <tr md-row md-select="user" md-select-id="_id" md-auto-select ng-repeat="user in datas.datas">
-                            <td md-cell>{{user.name}}</td>                            
+                            <td md-cell>{{user.name}}</td>
                             <td md-cell>{{user.email}}</td>
                             <td md-cell>{{user.role}}</td>
                         </tr>
@@ -51,39 +51,39 @@
                 </md-card-header-text>
             </md-card-header>
             <md-card-content>
-                
-                    <md-input-container class="md-block" flex-gt-sm>
-                        
-                            <label>Nom</label>
-                            <input ng-model="selectedUser.name" type="text" required="true">
-                        
-                    </md-input-container>
-                
-                    <md-input-container class="md-block" flex-gt-sm>
-                        
-                            <label>Email</label>
-                            <input ng-model="selectedUser.email" type="email" required="true">
-                        
-                    </md-input-container>
 
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <md-select ng-model="selectedUser.role">
-                            <md-option ng-repeat="role in roles" ng-value="role.value">
-                              {{role.label}}
-                            </md-option>
-                        </md-select>
-                        
-                    </md-input-container>
-                
-                    <md-input-container class="md-block" flex-gt-sm>
-                        
-                            <label>Mot de passe</label>
-                            <input ng-model="selectedUser.password" type="text" required="true">
-                        
-                    </md-input-container>
-                
+                <md-input-container class="md-block" flex-gt-sm>
 
-                
+                    <label>Nom</label>
+                    <input ng-model="selectedUser.name" type="text" required="true">
+
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+
+                    <label>Email</label>
+                    <input ng-model="selectedUser.email" type="email" required="true">
+
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <md-select ng-model="selectedUser.role">
+                        <md-option ng-repeat="role in roles" ng-value="role.value">
+                            {{role.label}}
+                        </md-option>
+                    </md-select>
+
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+
+                    <label>Mot de passe</label>
+                    <input ng-model="selectedUser.password" type="text">
+
+                </md-input-container>
+
+
+
             </md-card-content>
             <md-card-actions layout="row" layout-align="space-around center">
                 <md-button aria-label="Retour" ng-click="select(null)">

@@ -36,14 +36,18 @@ angular.module('regimesApp')
         }
 
         function updateSubMenus() {
-            var width = document.querySelector('#subheaderSlimmingBtn').clientWidth;
-            var height = document.querySelector('#main-diapo').clientHeight - 20;            
-            var submenuSlimming = angular.element(document.querySelector('#submenuSlimmingDiet'));
-            submenuSlimming.css('width', width + 'px');
-            submenuSlimming.css('max-height', height + 'px');
-            var submenuHealth = angular.element(document.querySelector('#submenuHealthDiet'))
-            submenuHealth.css('width', width + 'px');
-            submenuHealth.css('max-height', height + 'px');
+            var $slimmingBtn = document.querySelector('#subheaderSlimmingBtn');
+            var $mainDiapo = document.querySelector('#main-diapo');
+            if ($slimmingBtn && $mainDiapo) {
+                var width = $slimmingBtn.clientWidth;
+                var height = $mainDiapo.clientHeight - 20;
+                var submenuSlimming = angular.element(document.querySelector('#submenuSlimmingDiet'));
+                submenuSlimming.css('width', width + 'px');
+                submenuSlimming.css('max-height', height + 'px');
+                var submenuHealth = angular.element(document.querySelector('#submenuHealthDiet'))
+                submenuHealth.css('width', width + 'px');
+                submenuHealth.css('max-height', height + 'px');
+            }
         }
 
         angular.element($window).bind('resize', function() {

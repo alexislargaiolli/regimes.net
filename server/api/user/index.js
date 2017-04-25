@@ -6,9 +6,13 @@ var config = require('../../config/environment');
 var auth = require('../../auth/auth.service');
 
 var router = express.Router();
+router.use('/:id', auth.hasRole('superadmin'));
 
 router.get('/', auth.hasRole('admin'), controller.index);
-router.put('/:id', auth.hasRole('admin'), controller.update);
+router.put('/:id', (req, res, next) => {
+
+    next();
+}, controller.update);
 router.get('/paginate', auth.hasRole('admin'), controller.paginate);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
