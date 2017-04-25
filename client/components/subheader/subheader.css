@@ -1,72 +1,76 @@
-.subheader-btn{
-	overflow: visible;
-	width: 100%;
+.subheader-btn {
+    overflow: visible;
+    width: 100%;
 }
 
-.subheader-btn img{
-	margin:10px;
+.subheader-btn img {
+    margin: 10px;
 }
 
-.subheader-btn img, .subheader-btn span{
-	vertical-align: middle;
+.subheader-btn img,
+.subheader-btn span {
+    vertical-align: middle;
 }
 
-.subheader-btn:hover img.hover{
-	display: block;
+.subheader-btn:hover img.hover {
+    display: block;
 }
 
-.subheader-btn:hover img.small.hover, .subheader-btn img.small{
-	display: inline-block;	
+.subheader-btn:hover img.small.hover,
+.subheader-btn img.small {
+    display: inline-block;
 }
 
-.subheader-btn img.hover, .subheader-btn:hover img.out{
-	display:none;
- }
-
-.subheader-btn img{
-	width:120px;
-	display: block;
-	margin:0 auto;
+.subheader-btn img.hover,
+.subheader-btn:hover img.out {
+    display: none;
 }
 
-.subheader-btn img:not(.small){
+.subheader-btn img {
+    width: 120px;
+    width: 120px;
+    display: block;
+    margin: 0 auto;
+}
+
+.subheader-btn img:not(.small) {
     margin-bottom: -10px;
 }
 
-.subheader-btn img.small-add{
-	width:0px;
+.subheader-btn img.small-add {
+    width: 0px;
 }
 
-.subheader-btn img.small{
-	width:64px;
+.subheader-btn img.small {
+    width: 64px;
 }
 
-.subheader-btn img.small-remove{
-	width:150px;	
+.subheader-btn img.small-remove {
+    width: 150px;
 }
 
-.submenu{
-	position: absolute;
-	background: #811da7;
-	opacity: 0;
-	margin-left:6px;
-	overflow-y: scroll;
+.submenu {
+    position: absolute;
+    background: #811da7;
+    opacity: 0;
+    margin-left: 6px;
+    overflow-y: scroll;
 }
 
-.submenu-item{
-	padding: 10px 20px;
-	cursor: pointer;
-	display: block;
-	font-size: 14px;
-	font-family: Open Sans;
+.submenu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-family: Open Sans;
 }
 
-.submenu-item:hover{
-	background-color: rgba(158, 158, 158, 0.2);
+.submenu-item:hover {
+    background-color: rgba(158, 158, 158, 0.2);
 }
 
-.submenu.visible{
-	opacity: 1;
+.submenu.visible {
+    opacity: 1;
 }
 
 .submenu::-webkit-scrollbar {
@@ -74,6 +78,6 @@
 }
 
 .submenu::-webkit-scrollbar-thumb {
-  background-color: #777;
-  outline: 1px solid slategrey;
+    background-color: #777;
+    outline: 1px solid slategrey;
 }

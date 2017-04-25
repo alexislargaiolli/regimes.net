@@ -2,18 +2,18 @@
  * App-wide Styles
  */
 
-a{
-  text-decoration: none;
+a {
+    text-decoration: none;
 }
 
- .main-shell .profile-container {
-   height: 100%;
-   font-size: 14px;
- }
+.main-shell .profile-container {
+    height: 100%;
+    font-size: 14px;
+}
 
- .main-shell .profile-container .profile-name {
-   font-weight: 500;
- }
+.main-shell .profile-container .profile-name {
+    font-weight: 500;
+}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -22,75 +22,81 @@ a{
     padding: 0.2em 0;
 }
 
-body, #viewContainer{
-  background: #fff;
+body,
+#viewContainer {
+    background: #fff;
 }
 
-#logo{
-  cursor: pointer;
-      max-width: 100%;
+#logo {
+    cursor: pointer;
+    max-width: 100%;
+    height: 66px;
 }
 
-#main-diapo{
-  background: url(/assets/images/diapo.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width:100%;
-  height:300px;  
+#main-diapo {
+    background: url(/assets/images/diapo.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
 }
 
-#main-diapo.home{
-  background: url(/assets/images/diapo-accueil.jpg) no-repeat center center;  
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width:100%;
- height:500px;  
+#main-diapo.home {
+    background: url(/assets/images/diapo-accueil.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
 }
 
-button, select, html, textarea, input{
-  font-family: 'Open Sans', sans-serif;
+button,
+select,
+html,
+textarea,
+input {
+    font-family: 'Open Sans', sans-serif;
 }
 
-.md-button{
-  font-weight: 600;
-  font-size:12px;
+.md-button {
+    font-weight: 600;
+    font-size: 12px;
 }
 
-.md-button span{
+.md-button span {
     vertical-align: middle;
 }
 
-.main-container{
-  padding:40px 0;
+.main-container {
+    padding: 40px 0;
 }
 
-.subtitle{
-  font-size:16px;
+.subtitle {
+    font-size: 16px;
 }
 
-.subtitle h1{
-  margin: 10px 0;
-  font-size:40px;
+.subtitle h1 {
+    margin: 10px 0;
+    font-size: 40px;
 }
 
-.big-button{
-  padding:7px;
-  font-size: 14px;
+.big-button {
+    padding: 7px;
+    font-size: 14px;
 }
 
-.content-wrapper .md-headline{
-  font-family:Oswald;
-  color:#535054;
-  font-size:30px;
+.content-wrapper .md-headline {
+    font-family: Oswald;
+    color: #535054;
+    font-size: 30px;
 }
 
-.content-wrapper{
-   border-left:5px solid #811DA7;
-   margin:20px 0 0 0;
+.content-wrapper {
+    border-left: 5px solid #811DA7;
+    margin: 20px 0 0 0;
 }
 
 body::-webkit-scrollbar {
@@ -98,10 +104,10 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }
