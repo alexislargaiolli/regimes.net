@@ -53,6 +53,13 @@ body,
     height: 500px;
 }
 
+@media (max-width: 599px) {
+    #main-diapo,
+    #main-diapo.home {
+        height: 150px;
+    }
+}
+
 button,
 select,
 html,
@@ -81,6 +88,21 @@ input {
 .subtitle h1 {
     margin: 10px 0;
     font-size: 40px;
+}
+
+@media (max-width: 599px) {
+    .main-container {
+        padding: 20px 0;
+    }
+    .subtitle h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 959px) {
+    .main-container {
+        padding: 20px 0;
+    }
 }
 
 .big-button {

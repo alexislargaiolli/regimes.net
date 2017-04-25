@@ -1,12 +1,20 @@
-header .header-title{
-	font-family: 'Oswald', sans-serif;
-	font-size: 16px;
-	font-weight: 300;
-	margin-top: 65px;
+header .header-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 65px;
 }
 
-@media (max-width: 599px){
-	#header{
-		margin-bottom:20px;
-	}
+.header-right {
+    width: 320px;
+}
+
+@media (max-width: 599px) {
+    #header {
+        margin-bottom: 20px;
+    }
+    #logo,
+    .header-right {
+        width: 300px;
+    }
 }

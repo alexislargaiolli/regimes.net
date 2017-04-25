@@ -1,11 +1,15 @@
 <two-column-template template-title="On en parle">
     <left-column>
-        <actuality title="{{main.lastNews.title}}" content="{{main.lastNews.abstract}}" date="{{main.lastNews.date}}" image="{{main.lastNews.image}}" icon="av:library_books">
+        <actuality title="{{main.lastNews.title}}" content="{{main.lastNews.abstract}}" date="{{main.lastNews.date}}" image="{{main.lastNews.image}}" icon="av:library_books" class="pt0">
             <div layout="row" layout-align="end end">
-                <md-button ui-sref="actualities" class="md-primary md-raised big-button no-radius left ml0 mb0" flex="65">
+                <md-button ui-sref="actualities" class="md-primary md-raised big-button no-radius left ml0 mb0" flex="65" flex-md="60">
                     <span class="btn-txt-icon">+</span>D'actualités
                 </md-button>
-                <md-button ui-sref="actuality({id : main.lastNews._id})" class="md-accent md-raised big-button mr0 mb0" flex="35"><span class="btn-txt-icon">></span>Lire la suite</md-button>
+                <md-button ui-sref="actuality({id : main.lastNews._id})" class="md-accent md-raised big-button mr0 mb0" flex="35" flex-md="40">
+                    <span class="btn-txt-icon">></span>
+                    <span class="hide-xs hide-sm">Lire la suite</span>
+                    <span class="hide-gt-sm">Lire</span>
+                </md-button>
             </div>
         </actuality>
         <md-divider class="mv20"></md-divider>

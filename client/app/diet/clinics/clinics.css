@@ -1,4 +1,16 @@
-.angular-google-map-container { 
-	height: 800px; 
-	border: 1px solid silver;
+.angular-google-map-container {
+    height: 800px;
+    border: 1px solid silver;
+}
+
+@media (max-width: 599px) {
+    .angular-google-map-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 959px) {
+    .angular-google-map-container {
+        height: 400px;
+    }
 }

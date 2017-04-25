@@ -1,9 +1,11 @@
 <div id="header" layout="row" layout-align="center start">
-    <div layout-gt-xs="row" layout="column" flex class="layout-max-width" layout-align-gt-xs="space-between start" layout-align="center center">
-        <div flex-gt-sm="30" flex-xs="100" class="left"><img id="logo" class="mv10" ui-sref="main" src="assets/images/logo.png"></div>
-        <div flex="30" hide-xs></div>
-        <div flex-gt-sm="30" flex-xs="100" class="right" layout="column">
-            <div flex layout="row">
+    <div flex layout="row" layout-xs="column" class="layout-max-width" layout-align-gt-xs="space-between start" layout-align="center center">
+        <div class="header-left">
+            <img id="logo" class="mv10" ui-sref="main" src="assets/images/logo.png">
+        </div>
+
+        <div class="header-right" layout="column">
+            <div layout="row">
                 <md-button flex="50" class="md-raised md-primary no-radius m0" ui-sref="bibliography">Bibliographie</md-button>
                 <md-button flex="50" class="md-raised md-primary no-radius m0 ml10" ui-sref="actualities">Actualités</md-button>
             </div>

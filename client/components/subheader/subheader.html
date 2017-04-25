@@ -1,6 +1,6 @@
-<md-toolbar layout="row" layout-align="center center" ng-controller="SubheaderCtrl">
-    <div layout-gt-xs="row" layout="column" flex class="layout-max-width" layout-align="space-around center">
-        <div flex="30" class="center">
+<md-toolbar ng-controller="SubheaderCtrl">
+    <div layout="row" class="layout-max-width center-block" layout-align="space-around center">
+        <div flex="33" class="center">
             <md-button id="subheaderSlimmingBtn" ng-mouseenter="showMenu('#submenuSlimmingDiet')" ui-sref="diets({type : 'slimming'})" class="subheader-btn">
                 <img src="assets/icons/icone-big-1off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-1on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />
@@ -10,7 +10,7 @@
                 <a class="submenu-item" ng-click="onLinkClicked(diet._id)" ng-repeat="diet in slimmingDiets">{{diet.title}}</a>
             </div>
         </div>
-        <div flex="30" class="center">
+        <div flex="33" class="center">
             <md-button ui-sref="diets({type : 'health'})" ng-mouseenter="showMenu('#submenuHealthDiet')" class="subheader-btn">
                 <img src="assets/icons/icone-big-2off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-2on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />
@@ -20,7 +20,7 @@
                 <a class="submenu-item" ng-click="onLinkClicked(diet._id)" ng-repeat="diet in healthDiets">{{diet.title}}</a>
             </div>
         </div>
-        <div flex="30" class="center">
+        <div flex="33" class="center">
             <md-button ui-sref="clinics" class="subheader-btn">
                 <img src="assets/icons/icone-big-3off.png" class="big-icon out" ng-class="{small : currentState.name != 'main'}" />
                 <img src="assets/icons/icone-big-3on.png" class="big-icon hover" ng-class="{small : currentState.name != 'main'}" />

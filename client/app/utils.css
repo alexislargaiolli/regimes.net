@@ -1,116 +1,125 @@
 .layout-max-width {
-  width: 100%;
-  max-width: 1200px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main {
-  min-height: calc(100vh - 48px);
+    min-height: calc(100vh - 48px);
 }
 
-.bg1{
-  background:#811da7;
+.bg1 {
+    background: #811da7;
 }
 
-.color1{
-  color:#811da7;
+.color1 {
+    color: #811da7;
 }
 
-.bg2{
-  background: #4aac09;
+.bg2 {
+    background: #4aac09;
 }
 
-.color2{
-  color: #4aac09;
+.color2 {
+    color: #4aac09;
 }
 
-.color3{
-  color:#fff;
+.color3 {
+    color: #fff;
 }
 
-.errorColor{
-  color: #DD2C00;
+.errorColor {
+    color: #DD2C00;
 }
 
-.justify{
-  text-align: justify;
+.justify {
+    text-align: justify;
 }
 
-.center{
-	text-align: center;
+.center {
+    text-align: center;
 }
 
-.left{
-	text-align: left;
+.left {
+    text-align: left;
 }
 
-.right{
-	text-align: right;
+.right {
+    text-align: right;
 }
 
-.no-radius{
-  border-radius: 0;
+.no-radius {
+    border-radius: 0;
 }
 
-.btn-txt-icon{
-  margin-right:10px;
-  font-size:20px;
+.btn-txt-icon {
+    margin-right: 10px;
+    font-size: 20px;
 }
 
-.m0{
-  margin:0;
+.m0 {
+    margin: 0;
 }
 
-.mr0{
-  margin-right:0;
+.mr0 {
+    margin-right: 0;
 }
 
-.mr4{
-  margin-right:4px;
+.mr4 {
+    margin-right: 4px;
 }
 
-.ml0{
-  margin-left:0;
+.ml0 {
+    margin-left: 0;
 }
 
-.ml10{
-  margin-left:10px;
+.ml10 {
+    margin-left: 10px;
 }
 
-.mt0{
-  margin-top:0;
+.mt0 {
+    margin-top: 0;
 }
 
-.mt10{
-  margin-top:10px;
+.mt10 {
+    margin-top: 10px;
 }
 
-.mb0{
-  margin-bottom:0;
+.mb0 {
+    margin-bottom: 0;
 }
 
-.mb10{
-  margin-bottom:10px;
+.mb10 {
+    margin-bottom: 10px;
 }
 
-.mb20{
-  margin-bottom:20px;
+.mb20 {
+    margin-bottom: 20px;
 }
 
-.mv10{
-  margin-top:10px;
-  margin-bottom:10px;
+.mv10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.mv20{
-  margin-top:20px;
-  margin-bottom:20px;
+.mv20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.mh10{
-  margin-left:10px;
-  margin-right:10px; 
+.mh10 {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.w100{
-  width:100%;
+.pt0 {
+    padding-top: 0!important;
+}
+
+.w100 {
+    width: 100%;
 }

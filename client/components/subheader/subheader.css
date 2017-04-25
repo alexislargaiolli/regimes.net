@@ -1,10 +1,8 @@
 .subheader-btn {
     overflow: visible;
     width: 100%;
-}
-
-.subheader-btn img {
-    margin: 10px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .subheader-btn img,
@@ -28,7 +26,7 @@
 
 .subheader-btn img {
     width: 120px;
-    width: 120px;
+    height: 120px;
     display: block;
     margin: 0 auto;
 }
@@ -43,17 +41,34 @@
 
 .subheader-btn img.small {
     width: 64px;
+    height: 64px;
 }
 
 .subheader-btn img.small-remove {
     width: 150px;
 }
 
+@media (max-width: 599px) {
+    .subheader-btn {
+        margin: 5px 0;
+    }
+    .subheader-btn img {
+        width: 64px;
+        height: 64px;
+    }
+    .subheader-btn span {
+        width: 90px;
+        display: block;
+        white-space: initial;
+        line-height: 20px;
+        margin: 10px auto 0 auto;
+    }
+}
+
 .submenu {
     position: absolute;
     background: #811da7;
     opacity: 0;
-    margin-left: 6px;
     overflow-y: scroll;
 }
 

@@ -5,14 +5,15 @@ angular.module('regimesApp')
         return {
             templateUrl: 'app/directives/actuality/actuality.html',
             restrict: 'EA',
-            transclude : true,
+            transclude: true,
             scope: {
                 title: '@title',
                 date: '@',
                 content: '@',
                 image: '@',
                 icon: '@',
-                iconImage : '@'
+                iconImage: '@',
+                class: '@'
             }
         };
     });
