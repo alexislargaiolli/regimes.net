@@ -1,6 +1,6 @@
 <main-template template-title="Proposer un régime">
-    <md-card class="content-wrapper" flex="80">
-        <md-card-content layout="column">        	
+    <md-card class="content-wrapper" flex="100" class="mt0">
+        <md-card-content layout="column">
             <form name="form" flex="100" ng-submit="submitDietCtrl.submitDiet(form)" novalidate ng-if="!submitDietCtrl.submission.success === true">
                 <md-card-title-text>
                     <span class="md-headline">Qui êtes-vous ?</span>
@@ -34,7 +34,7 @@
                 </md-input-container>
                 <label>Décrivez votre régime en bref</label>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <textarea name="abstract" ng-model="submitDietCtrl.diet.abstract" ui-tinymce="submitDietCtrl.tinymceOptions" rows="3" aria-label="Abstract" ></textarea>
+                    <textarea name="abstract" ng-model="submitDietCtrl.diet.abstract" ui-tinymce="submitDietCtrl.tinymceOptions" rows="3" aria-label="Abstract"></textarea>
                     <p class="right">{{submitDietCtrl.diet.abstract.length}} / {{submitDietCtrl.maxAbstractLength}}</p>
                     <p class="errorColor" ng-repeat="error in submitDietCtrl.abstractErrors">{{error}}</p>
                 </md-input-container>
@@ -43,15 +43,15 @@
                     <textarea ng-model="submitDietCtrl.diet.content" ui-tinymce="submitDietCtrl.tinymceOptions" rows="5" aria-label="Content"></textarea>
                     <p class="right">{{submitDietCtrl.diet.content.length}} / {{submitDietCtrl.maxContentLength}}</p>
                     <p class="errorColor" ng-repeat="error in submitDietCtrl.contentErrors">{{error}}</p>
-                </md-input-container>                
+                </md-input-container>
                 <md-card-actions layout="row" layout-align="space-around center">
                     <md-button type="submit" class="md-raised md-primary" aria-label="Sauvegarder">
                         <md-icon md-svg-icon="content:save"></md-icon>
                         Soumettre mon régime
                     </md-button>
-                </md-card-actions>                               
-            </form>            
+                </md-card-actions>
+            </form>
             <p class="center">{{submitDietCtrl.submission.message}}</p>
-        </md-card-content>        
+        </md-card-content>
     </md-card>
 </main-template>
